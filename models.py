@@ -25,7 +25,7 @@ class Player:
     def to_json(self):
         self.count_statistic()
         player = {
-            'name': self.name,
+            'name': self.name.strip(),
             'rang': self.rang if self.rang else '',
             'place': self.place,
             'games': self.games,

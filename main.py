@@ -6,7 +6,7 @@ from parsers.Triples import Triples
 from parsers.FinalsAB import FinalsAB
 from parsers.SpbCup import SpbCup
 
-DEBUG = True
+DEBUG = False
 
 TOURNAMENTS = {
     'FirstPm': FirstPmParser,
@@ -54,4 +54,4 @@ if __name__ == '__main__':
 
     tournament = TOURNAMENTS[tournament_type](file_name)
     tournament.parse()
-    # tournament.send_result(tournament_id)
+    tournament.send_result(tournament_id)
