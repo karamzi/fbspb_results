@@ -5,6 +5,8 @@ from parsers.PairsMix import PairsMix
 from parsers.Triples import Triples
 from parsers.FinalsAB import FinalsAB
 from parsers.SpbCup import SpbCup
+from parsers.TriplesMix import TriplesMix
+from parsers.Fives import Fives
 
 DEBUG = False
 
@@ -14,8 +16,10 @@ TOURNAMENTS = {
     'Pairs': Pairs,
     'PairsMix': PairsMix,
     'Triples': Triples,
+    'TriplesMix': TriplesMix,
     'finals_a_b': FinalsAB,
-    'spb_cup': SpbCup
+    'spb_cup': SpbCup,
+    'Fives': Fives
 }
 
 
@@ -27,6 +31,8 @@ def choose_type():
     print('5 - Пары микс')
     print('6 - Тройки')
     print('7 - Кубок СПБ')
+    print('8 - Тройки микс')
+    print('9 - Пятерки')
 
     option = int(input('Выберите тип турнира: '))
 
@@ -44,6 +50,10 @@ def choose_type():
         return 'Triples'
     elif option == 7:
         return 'spb_cup'
+    elif option == 8:
+        return 'TriplesMix'
+    elif option == 9:
+        return 'Fives'
     raise Exception('Неверный тип')
 
 
