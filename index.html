@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="robots" content="NONE,NOARCHIVE">
-  <title>ProgrammingError
+  <title>IntegrityError
           at /api/parse_results/</title>
   <style type="text/css">
     html * { padding:0; margin:0; }
@@ -98,11 +98,10 @@
 </head>
 <body>
 <div id="summary">
-  <h1>ProgrammingError
+  <h1>IntegrityError
        at /api/parse_results/</h1>
-  <pre class="exception_value">relation &quot;main_spbcup&quot; does not exist
-LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...
-                    ^
+  <pre class="exception_value">null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint
+DETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).
 </pre>
   <table class="meta">
 
@@ -112,7 +111,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
     </tr>
     <tr>
       <th>Request URL:</th>
-      <td>http://127.0.0.1:8000/api/parse_results/</td>
+      <td>http://localhost:8080/api/parse_results/</td>
     </tr>
 
     <tr>
@@ -122,22 +121,21 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
 
     <tr>
       <th>Exception Type:</th>
-      <td>ProgrammingError</td>
+      <td>IntegrityError</td>
     </tr>
 
 
     <tr>
       <th>Exception Value:</th>
-      <td><pre>relation &quot;main_spbcup&quot; does not exist
-LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...
-                    ^
+      <td><pre>null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint
+DETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).
 </pre></td>
     </tr>
 
 
     <tr>
       <th>Exception Location:</th>
-      <td><span class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py</span>, line 89, in _execute</td>
+      <td><span class="fname">/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py</span>, line 89, in _execute</td>
     </tr>
 
 
@@ -148,26 +146,23 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
 
     <tr>
       <th>Python Executable:</th>
-      <td>/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/bin/python</td>
+      <td>/usr/local/bin/python</td>
     </tr>
     <tr>
       <th>Python Version:</th>
-      <td>3.8.4</td>
+      <td>3.12.1</td>
     </tr>
     <tr>
       <th>Python Path:</th>
-      <td><pre>[&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb&#x27;,
- &#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb&#x27;,
- &#x27;/Applications/PyCharm.app/Contents/plugins/python/helpers/pycharm_display&#x27;,
- &#x27;/Library/Frameworks/Python.framework/Versions/3.8/lib/python38.zip&#x27;,
- &#x27;/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8&#x27;,
- &#x27;/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/lib-dynload&#x27;,
- &#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages&#x27;,
- &#x27;/Applications/PyCharm.app/Contents/plugins/python/helpers/pycharm_matplotlib_backend&#x27;]</pre></td>
+      <td><pre>[&#x27;/code&#x27;,
+ &#x27;/usr/local/lib/python312.zip&#x27;,
+ &#x27;/usr/local/lib/python3.12&#x27;,
+ &#x27;/usr/local/lib/python3.12/lib-dynload&#x27;,
+ &#x27;/usr/local/lib/python3.12/site-packages&#x27;]</pre></td>
     </tr>
     <tr>
       <th>Server time:</th>
-      <td>Tue, 30 May 2023 16:14:18 +0000</td>
+      <td>Tue, 13 Feb 2024 06:27:55 +0000</td>
     </tr>
   </table>
 </div>
@@ -185,47 +180,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py</code>, line 89, in _execute
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py</code>, line 89, in _execute
           
 
           
-            <div class="context" id="c140670041144064">
+            <div class="context" id="c140325174461248">
               
-                <ol start="82" class="pre-context" id="pre140670041144064">
+                <ol start="82" class="pre-context" id="pre140325174461248">
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        with self.db.wrap_database_errors:</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>            if params is None:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>            if params is None:</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>                # params default might be backend specific.</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>                # params default might be backend specific.</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>                return self.cursor.execute(sql)</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>                return self.cursor.execute(sql)</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>            else:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>            else:</pre></li>
                 
                 </ol>
               
               <ol start="89" class="context-line">
-                <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>                return self.cursor.execute(sql, params)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>                return self.cursor.execute(sql, params)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='90' class="post-context" id="post140670041144064">
+                <ol start='90' class="post-context" id="post140325174461248">
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre></pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        with self.db.wrap_database_errors:</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre></pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre></pre></li>
                   
               </ol>
               
@@ -237,7 +233,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670041144064">
+            <table class="vars" id="v140325174461248">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -250,48 +246,25 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                     <td>ignored_wrapper_args</td>
                     <td class="code"><pre>(False,
  {&#x27;connection&#x27;: &lt;DatabaseWrapper vendor=&#x27;postgresql&#x27; alias=&#x27;default&#x27;&gt;,
-  &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;})</pre></td>
+  &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;})</pre></td>
                   </tr>
                 
                   <tr>
                     <td>params</td>
-                    <td class="code"><pre>(1,
- 3,
- 26,
- 3236,
- Decimal(&#x27;231.14&#x27;),
- 1,
- 203,
- 254,
- 209,
- 182,
- 268,
- 257,
- 193,
- 255,
- 247,
- 216,
- 258,
- 228,
- 245,
- 221,
- None,
- None)</pre></td>
+                    <td class="code"><pre>(4, 80, 47, 433, Decimal(&#x27;144.33&#x27;), 14, 137, 133, 163, None, None, None)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>sql</td>
-                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &quot;sum&quot;, &#x27;
- &#x27;&quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &quot;game_6&quot;, &#x27;
- &#x27;&quot;game_7&quot;, &quot;game_8&quot;, &quot;game_9&quot;, &quot;game_10&quot;, &quot;game_11&quot;, &quot;game_12&quot;, &quot;game_13&quot;, &#x27;
- &#x27;&quot;game_14&quot;, &quot;game_15&quot;, &quot;game_16&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, &#x27;
- &#x27;%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
- &#x27;&quot;main_spbcup&quot;.&quot;id&quot;&#x27;)</pre></td>
+                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_firstpmmodel&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &#x27;
+ &#x27;&quot;sum&quot;, &quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &#x27;
+ &#x27;&quot;game_6&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
+ &#x27;&quot;main_firstpmmodel&quot;.&quot;id&quot;&#x27;)</pre></td>
                   </tr>
                 
               </tbody>
@@ -303,56 +276,56 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
           <li class="cause"><h3>
           
-            The above exception (relation &quot;main_spbcup&quot; does not exist
-LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...
-                    ^
+            The above exception (null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint
+DETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).
 ) was the direct cause of the following exception:
           
         </h3></li>
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/core/handlers/exception.py</code>, line 55, in inner
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py</code>, line 55, in inner
           
 
           
-            <div class="context" id="c140670039696320">
+            <div class="context" id="c140325210779904">
               
-                <ol start="48" class="pre-context" id="pre140670039696320">
+                <ol start="48" class="pre-context" id="pre140325210779904">
                 
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>        return inner</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>        return inner</pre></li>
                 
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>    else:</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>    else:</pre></li>
                 
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>        @wraps(get_response)</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>        @wraps(get_response)</pre></li>
                 
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>        def inner(request):</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>        def inner(request):</pre></li>
                 
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>            try:</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>            try:</pre></li>
                 
                 </ol>
               
               <ol start="55" class="context-line">
-                <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>                response = get_response(request)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>                response = get_response(request)
+                               ^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='56' class="post-context" id="post140670039696320">
+                <ol start='56' class="post-context" id="post140325210779904">
                   
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>            except Exception as exc:</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>            except Exception as exc:</pre></li>
                   
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>                response = response_for_exception(request, exc)</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>                response = response_for_exception(request, exc)</pre></li>
                   
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>            return response</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>            return response</pre></li>
                   
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre>        return inner</pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre>        return inner</pre></li>
                   
-                  <li onclick="toggle('pre140670039696320', 'post140670039696320')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210779904', 'post140325210779904')"><pre></pre></li>
                   
               </ol>
               
@@ -364,7 +337,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039696320">
+            <table class="vars" id="v140325210779904">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -375,12 +348,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>exc</td>
-                    <td class="code"><pre>ProgrammingError(&#x27;relation &quot;main_spbcup&quot; does not exist\nLINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...\n                    ^\n&#x27;)</pre></td>
+                    <td class="code"><pre>IntegrityError(&#x27;null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint\nDETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).\n&#x27;)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>get_response</td>
-                    <td class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x7ff04abd07c0&gt;&gt;</pre></td>
+                    <td class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x7fa00609c1a0&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -397,47 +370,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/core/handlers/base.py</code>, line 197, in _get_response
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py</code>, line 197, in _get_response
           
 
           
-            <div class="context" id="c140670039696128">
+            <div class="context" id="c140325210771776">
               
-                <ol start="190" class="pre-context" id="pre140670039696128">
+                <ol start="190" class="pre-context" id="pre140325210771776">
                 
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>        if response is None:</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>        if response is None:</pre></li>
                 
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
                 
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>            # If it is an asynchronous view, run it in a subthread.</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>            # If it is an asynchronous view, run it in a subthread.</pre></li>
                 
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>            if iscoroutinefunction(wrapped_callback):</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>            if iscoroutinefunction(wrapped_callback):</pre></li>
                 
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>                wrapped_callback = async_to_sync(wrapped_callback)</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>                wrapped_callback = async_to_sync(wrapped_callback)</pre></li>
                 
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>            try:</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>            try:</pre></li>
                 
                 </ol>
               
               <ol start="197" class="context-line">
-                <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>                response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>                response = wrapped_callback(request, *callback_args, **callback_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='198' class="post-context" id="post140670039696128">
+                <ol start='198' class="post-context" id="post140325210771776">
                   
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>            except Exception as e:</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>            except Exception as e:</pre></li>
                   
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
                   
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>                if response is None:</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>                if response is None:</pre></li>
                   
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>                    raise</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>                    raise</pre></li>
                   
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039696128', 'post140670039696128')"><pre>        # Complain if the view returned None (a common error).</pre></li>
+                  <li onclick="toggle('pre140325210771776', 'post140325210771776')"><pre>        # Complain if the view returned None (a common error).</pre></li>
                   
               </ol>
               
@@ -449,7 +423,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039696128">
+            <table class="vars" id="v140325210771776">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -460,7 +434,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>callback</td>
-                    <td class="code"><pre>&lt;function parse_results at 0x7ff04b834160&gt;</pre></td>
+                    <td class="code"><pre>&lt;function parse_results at 0x7fa00271a840&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -490,12 +464,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7ff04abd07c0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7fa00609c1a0&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>wrapped_callback</td>
-                    <td class="code"><pre>&lt;function parse_results at 0x7ff04b834160&gt;</pre></td>
+                    <td class="code"><pre>&lt;function parse_results at 0x7fa00271a840&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -507,41 +481,42 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py</code>, line 56, in wrapper_view
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/views/decorators/csrf.py</code>, line 56, in wrapper_view
           
 
           
-            <div class="context" id="c140670039696768">
+            <div class="context" id="c140325211108800">
               
-                <ol start="49" class="pre-context" id="pre140670039696768">
+                <ol start="49" class="pre-context" id="pre140325211108800">
                 
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>def csrf_exempt(view_func):</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>def csrf_exempt(view_func):</pre></li>
                 
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>    &quot;&quot;&quot;Mark a view function as being exempt from the CSRF view protection.&quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>    &quot;&quot;&quot;Mark a view function as being exempt from the CSRF view protection.&quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre></pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>    # view_func.csrf_exempt = True would also work, but decorators are nicer</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>    # view_func.csrf_exempt = True would also work, but decorators are nicer</pre></li>
                 
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>    # if they don&#x27;t have side effects, so return a new function.</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>    # if they don&#x27;t have side effects, so return a new function.</pre></li>
                 
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>    @wraps(view_func)</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>    @wraps(view_func)</pre></li>
                 
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>    def wrapper_view(*args, **kwargs):</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>    def wrapper_view(*args, **kwargs):</pre></li>
                 
                 </ol>
               
               <ol start="56" class="context-line">
-                <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>        return view_func(*args, **kwargs)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>        return view_func(*args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='57' class="post-context" id="post140670039696768">
+                <ol start='57' class="post-context" id="post140325211108800">
                   
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre></pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>    wrapper_view.csrf_exempt = True</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>    wrapper_view.csrf_exempt = True</pre></li>
                   
-                  <li onclick="toggle('pre140670039696768', 'post140670039696768')"><pre>    return wrapper_view</pre></li>
+                  <li onclick="toggle('pre140325211108800', 'post140325211108800')"><pre>    return wrapper_view</pre></li>
                   
               </ol>
               
@@ -553,7 +528,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039696768">
+            <table class="vars" id="v140325211108800">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -574,7 +549,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>view_func</td>
-                    <td class="code"><pre>&lt;function parse_results at 0x7ff04b8340d0&gt;</pre></td>
+                    <td class="code"><pre>&lt;function parse_results at 0x7fa00271a7a0&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -586,47 +561,44 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame user">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/main/views.py</code>, line 345, in parse_results
+            <code class="fname">/code/main/views.py</code>, line 380, in parse_results
           
 
           
-            <div class="context" id="c140670039695424">
+            <div class="context" id="c140325210782784">
               
-                <ol start="338" class="pre-context" id="pre140670039695424">
+                <ol start="373" class="pre-context" id="pre140325210782784">
                 
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>            player, created = Player.get_player(item, &#x27;man&#x27;)</pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre>            player, created = Player.get_player(item, &#x27;woman&#x27;)</pre></li>
                 
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>            if created:</pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre>            if created:</pre></li>
                 
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>                created_people.append(player.name)</pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre>                created_people.append(player.name)</pre></li>
                 
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>            Statistic.load_statistic(player.pk, item, year)</pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre>            Statistic.load_statistic(player.pk, item, year)</pre></li>
                 
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre></pre></li>
                 
                 </ol>
               
-              <ol start="345" class="context-line">
-                <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>            BaseResult.upload_results(model, item, year, player, tournament)</pre> <span>…</span></li>
+              <ol start="380" class="context-line">
+                <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre>            BaseResult.upload_results(model, item, year, player, tournament)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='346' class="post-context" id="post140670039695424">
+                <ol start='381' class="post-context" id="post140325210782784">
                   
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre></pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>        for item in data[&#x27;woman&#x27;]:</pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre>    Rating.upload_rating(data[&#x27;type&#x27;], year, tournament)</pre></li>
                   
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>            player, created = Player.get_player(item, &#x27;woman&#x27;)</pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre></pre></li>
-                  
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>            if created:</pre></li>
-                  
-                  <li onclick="toggle('pre140670039695424', 'post140670039695424')"><pre>                created_people.append(player.name)</pre></li>
+                  <li onclick="toggle('pre140325210782784', 'post140325210782784')"><pre>    return JsonResponse(data={&#x27;result&#x27;: created_people}, status=200)</pre></li>
                   
               </ol>
               
@@ -638,7 +610,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039695424">
+            <table class="vars" id="v140325210782784">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -654,197 +626,176 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>created_people</td>
-                    <td class="code"><pre>[]</pre></td>
+                    <td class="code"><pre>[&#x27;Краянова Юлия&#x27;]</pre></td>
                   </tr>
                 
                   <tr>
                     <td>data</td>
-                    <td class="code"><pre>{&#x27;id&#x27;: 26,
- &#x27;man&#x27;: [{&#x27;avg&#x27;: 231.14285714285714,
-          &#x27;games&#x27;: [203,
-                    254,
-                    209,
-                    182,
-                    268,
-                    257,
-                    193,
-                    255,
-                    247,
-                    216,
-                    258,
-                    228,
-                    245,
-                    221],
-          &#x27;max&#x27;: 268,
-          &#x27;min&#x27;: 182,
-          &#x27;more_200&#x27;: 12,
-          &#x27;name&#x27;: &#x27;Ландау Максим&#x27;,
-          &#x27;place&#x27;: 1,
-          &#x27;rang&#x27;: &#x27;МС&#x27;,
-          &#x27;sum&#x27;: 3236},
-         {&#x27;avg&#x27;: 207.07142857142858,
-          &#x27;games&#x27;: [245,
-                    243,
-                    235,
-                    183,
-                    146,
-                    235,
-                    225,
-                    203,
-                    193,
-                    238,
-                    200,
-                    165,
-                    178,
-                    210],
-          &#x27;max&#x27;: 245,
-          &#x27;min&#x27;: 146,
-          &#x27;more_200&#x27;: 9,
+                    <td class="code"><pre>{&#x27;id&#x27;: 47,
+ &#x27;man&#x27;: [{&#x27;avg&#x27;: 198.33333333333334,
+          &#x27;games&#x27;: [178, 206, 228, 182, 218, 178],
+          &#x27;max&#x27;: 228,
+          &#x27;min&#x27;: 178,
+          &#x27;more_200&#x27;: 3,
           &#x27;name&#x27;: &#x27;Липкин Илья&#x27;,
+          &#x27;place&#x27;: 1,
+          &#x27;rang&#x27;: &#x27;КМС&#x27;,
+          &#x27;sum&#x27;: 1190},
+         {&#x27;avg&#x27;: 196.66666666666666,
+          &#x27;games&#x27;: [190, 193, 222, 170, 181, 224],
+          &#x27;max&#x27;: 224,
+          &#x27;min&#x27;: 170,
+          &#x27;more_200&#x27;: 2,
+          &#x27;name&#x27;: &#x27;Афанасьев Олег&#x27;,
           &#x27;place&#x27;: 2,
           &#x27;rang&#x27;: &#x27;КМС&#x27;,
-          &#x27;sum&#x27;: 2899},
-         {&#x27;avg&#x27;: 198.625,
-          &#x27;games&#x27;: [161, 237, 196, 217, 224, 189, 154, 211],
-          &#x27;max&#x27;: 237,
-          &#x27;min&#x27;: 154,
-          &#x27;more_200&#x27;: 4,
-          &#x27;name&#x27;: &#x27;Плечев Александр&#x27;,
-          &#x27;place&#x27;: 9,
-          &#x27;rang&#x27;: &#x27;КМС&#x27;,
-          &#x27;sum&#x27;: 1589},
-         {&#x27;avg&#x27;: 203.875,
-          &#x27;games&#x27;: [209, 171, 243, 180, 236, 183, 207, 202],
-          &#x27;max&#x27;: 243,
-          &#x27;min&#x27;: 171,
-          &#x27;more_200&#x27;: 5,
+          &#x27;sum&#x27;: 1180},
+         {&#x27;avg&#x27;: 188.83333333333334,
+          &#x27;games&#x27;: [223, 231, 176, 156, 157, 190],
+          &#x27;max&#x27;: 231,
+          &#x27;min&#x27;: 156,
+          &#x27;more_200&#x27;: 2,
           &#x27;name&#x27;: &#x27;Цегельник Алексей&#x27;,
-          &#x27;place&#x27;: 10,
-          &#x27;rang&#x27;: &#x27;КМС&#x27;,
-          &#x27;sum&#x27;: 1631},
-         {&#x27;avg&#x27;: 182.28571428571428,
-          &#x27;games&#x27;: [242,
-                    188,
-                    192,
-                    188,
-                    213,
-                    181,
-                    187,
-                    126,
-                    202,
-                    199,
-                    128,
-                    147,
-                    149,
-                    210],
-          &#x27;max&#x27;: 242,
-          &#x27;min&#x27;: 126,
-          &#x27;more_200&#x27;: 4,
-          &#x27;name&#x27;: &#x27;Мацакян Георгий&#x27;,
-          &#x27;place&#x27;: 4,
-          &#x27;rang&#x27;: &#x27;&#x27;,
-          &#x27;sum&#x27;: 2552},
-         {&#x27;avg&#x27;: 202.0,
-          &#x27;games&#x27;: [238,
-                    171,
-                    199,
-                    168,
-                    212,
-                    214,
-                    190,
-                    227,
-                    204,
-                    197,
-                    213,
-                    203,
-                    196,
-                    196],
-          &#x27;max&#x27;: 238,
-          &#x27;min&#x27;: 168,
-          &#x27;more_200&#x27;: 7,
-          &#x27;name&#x27;: &#x27;Луговой Геннадий&#x27;,
           &#x27;place&#x27;: 3,
           &#x27;rang&#x27;: &#x27;КМС&#x27;,
-          &#x27;sum&#x27;: 2828},
-         {&#x27;avg&#x27;: 188.2,
-          &#x27;games&#x27;: [176, 180, 246, 225, 154, 183, 195, 182, 168, 173],
-          &#x27;max&#x27;: 246,
-          &#x27;min&#x27;: 154,
+          &#x27;sum&#x27;: 1133},
+         {&#x27;avg&#x27;: 183.16666666666666,
+          &#x27;games&#x27;: [187, 212, 162, 175, 218, 145],
+          &#x27;max&#x27;: 218,
+          &#x27;min&#x27;: 145,
           &#x27;more_200&#x27;: 2,
-          &#x27;name&#x27;: &#x27;Кириченко Сергей&#x27;,
+          &#x27;name&#x27;: &#x27;Евдокимов Сергей&#x27;,
+          &#x27;place&#x27;: 4,
+          &#x27;rang&#x27;: &#x27;КМС&#x27;,
+          &#x27;sum&#x27;: 1099},
+         {&#x27;avg&#x27;: 180.16666666666666,
+          &#x27;games&#x27;: [222, 194, 182, 164, 118, 201],
+          &#x27;max&#x27;: 222,
+          &#x27;min&#x27;: 118,
+          &#x27;more_200&#x27;: 2,
+          &#x27;name&#x27;: &#x27;Обрывков Евгений&#x27;,
           &#x27;place&#x27;: 5,
           &#x27;rang&#x27;: &#x27;&#x27;,
-          &#x27;sum&#x27;: 1882},
-         {&#x27;avg&#x27;: 188.5,
-          &#x27;games&#x27;: [218, 206, 195, 171, 184, 189, 144, 201],
-          &#x27;max&#x27;: 218,
-          &#x27;min&#x27;: 144,
-          &#x27;more_200&#x27;: 3,
-          &#x27;name&#x27;: &#x27;Пашковский Александр&#x27;,
-          &#x27;place&#x27;: 11,
-          &#x27;rang&#x27;: &#x27;МС&#x27;,
-          &#x27;sum&#x27;: 1508},
-         {&#x27;avg&#x27;: 186.66666666666666,
-          &#x27;games&#x27;: [233, 186, 150, 142, 212, 196, 187, 216, 213, 175, 176, 154],
-          &#x27;max&#x27;: 233,
-          &#x27;min&#x27;: 142,
-          &#x27;more_200&#x27;: 4,
+          &#x27;sum&#x27;: 1081},
+         {&#x27;avg&#x27;: 178.83333333333334,
+          &#x27;games&#x27;: [144, 198, 165, 183, 240, 143],
+          &#x27;max&#x27;: 240,
+          &#x27;min&#x27;: 143,
+          &#x27;more_200&#x27;: 1,
           &#x27;name&#x27;: &#x27;Антоненко Алексей&#x27;,
           &#x27;place&#x27;: 6,
-          &#x27;rang&#x27;: &#x27;&#x27;,
-          &#x27;sum&#x27;: 2240},
-         {&#x27;avg&#x27;: 183.2,
-          &#x27;games&#x27;: [164, 183, 171, 166, 225, 191, 223, 180, 147, 182],
-          &#x27;max&#x27;: 225,
-          &#x27;min&#x27;: 147,
-          &#x27;more_200&#x27;: 2,
-          &#x27;name&#x27;: &#x27;Водолин Федор&#x27;,
-          &#x27;place&#x27;: 12,
+          &#x27;rang&#x27;: 1,
+          &#x27;sum&#x27;: 1073},
+         {&#x27;avg&#x27;: 177.16666666666666,
+          &#x27;games&#x27;: [185, 202, 181, 169, 134, 192],
+          &#x27;max&#x27;: 202,
+          &#x27;min&#x27;: 134,
+          &#x27;more_200&#x27;: 1,
+          &#x27;name&#x27;: &#x27;Никитин Алексей&#x27;,
+          &#x27;place&#x27;: 7,
           &#x27;rang&#x27;: &#x27;КМС&#x27;,
-          &#x27;sum&#x27;: 1832},
-         {&#x27;avg&#x27;: 179.0,
-          &#x27;games&#x27;: [202, 261, 160, 165, 180, 118, 215, 150, 174, 165],
-          &#x27;max&#x27;: 261,
-          &#x27;min&#x27;: 118,
-          &#x27;more_200&#x27;: 3,
-          &#x27;name&#x27;: &#x27;Васильев Алексей&#x27;,
-          … &lt;trimmed 14605 bytes string&gt;</pre></td>
+          &#x27;sum&#x27;: 1063},
+         {&#x27;avg&#x27;: 175.66666666666666,
+          &#x27;games&#x27;: [223, 189, 181, 152, 157, 152],
+          &#x27;max&#x27;: 223,
+          &#x27;min&#x27;: 152,
+          &#x27;more_200&#x27;: 1,
+          &#x27;name&#x27;: &#x27;Брокан Владимир&#x27;,
+          &#x27;place&#x27;: 8,
+          &#x27;rang&#x27;: &#x27;КМС&#x27;,
+          &#x27;sum&#x27;: 1054},
+         {&#x27;avg&#x27;: 175.33333333333334,
+          &#x27;games&#x27;: [162, 166, 156, 198, 169, 201],
+          &#x27;max&#x27;: 201,
+          &#x27;min&#x27;: 156,
+          &#x27;more_200&#x27;: 1,
+          &#x27;name&#x27;: &#x27;Кириченко Сергей&#x27;,
+          &#x27;place&#x27;: 9,
+          &#x27;rang&#x27;: &#x27;&#x27;,
+          &#x27;sum&#x27;: 1052},
+         {&#x27;avg&#x27;: 173.33333333333334,
+          &#x27;games&#x27;: [188, 150, 162, 194, 186, 160],
+          &#x27;max&#x27;: 194,
+          &#x27;min&#x27;: 150,
+          &#x27;more_200&#x27;: 0,
+          &#x27;name&#x27;: &#x27;Дудин Владимир&#x27;,
+          &#x27;place&#x27;: 10,
+          &#x27;rang&#x27;: &#x27;КМС&#x27;,
+          &#x27;sum&#x27;: 1040},
+         {&#x27;avg&#x27;: 172.83333333333334,
+          &#x27;games&#x27;: [151, 179, 151, 181, 180, 195],
+          &#x27;max&#x27;: 195,
+          &#x27;min&#x27;: 151,
+          &#x27;more_200&#x27;: 0,
+          &#x27;name&#x27;: &#x27;Луговой Геннадий&#x27;,
+          &#x27;place&#x27;: 11,
+          &#x27;rang&#x27;: &#x27;КМС&#x27;,
+          &#x27;sum&#x27;: 1037},
+         {&#x27;avg&#x27;: 171.0,
+          &#x27;games&#x27;: [208, 150, 177, 197, 157, 137],
+          &#x27;max&#x27;: 208,
+          &#x27;min&#x27;: 137,
+          &#x27;more_200&#x27;: 1,
+          &#x27;name&#x27;: &#x27;Опарин Сергей&#x27;,
+          &#x27;place&#x27;: 12,
+          &#x27;rang&#x27;: 2,
+          &#x27;sum&#x27;: 1026},
+         {&#x27;avg&#x27;: 170.83333333333334,
+          &#x27;games&#x27;: [161, 248, 181, 156, 141, 138],
+          &#x27;max&#x27;: 248,
+          &#x27;min&#x27;: 138,
+          &#x27;more_200&#x27;: 1,
+          &#x27;name&#x27;: &#x27;Пашковский Александр&#x27;,
+          &#x27;place&#x27;: 13,
+          &#x27;rang&#x27;: &#x27;МС&#x27;,
+          &#x27;sum&#x27;: 1025},
+         {&#x27;avg&#x27;: 170.5,
+          &#x27;games&#x27;: [161, 183, 201, 200, 138, 140],
+          &#x27;max&#x27;: 201,
+          &#x27;min&#x27;: 138,
+          &#x27;more_200&#x27;: 2,
+          &#x27;name&#x27;: &#x27;Мясников Виктор&#x27;,
+          &#x27;place&#x27;: 14,
+          &#x27;rang&#x27;: 1,
+          &#x27;sum&#x27;: 1023},
+         {&#x27;avg&#x27;: 164.5,
+          &#x27;games&#x27;: [168, 134, 157, 197, 163, 168],
+          &#x27;max&#x27;: 197,
+          &#x27;min&#x27;: 134,
+          &#x27;more_200&#x27;: 0,
+          &#x27;name&#x27;: &#x27;Алимпиев Дмитрий&#x27;,
+          &#x27;place&#x27;: 15,
+          &#x27;rang&#x27;: &#x27;МС&#x27;,
+          &#x27;sum&#x27;: 987},
+         {&#x27;avg&#x27;: 164.33333333333334,
+          &#x27;games&#x27;: [168, 145, 154, 210, 162, 147],
+          &#x27;max&#x27;: 210,
+          &#x27;min&#x27;: 145,
+          &#x27;more_200&#x27;: 1,
+ … &lt;trimmed 10953 bytes string&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>item</td>
-                    <td class="code"><pre>{&#x27;avg&#x27;: 231.14285714285714,
- &#x27;games&#x27;: [203,
-           254,
-           209,
-           182,
-           268,
-           257,
-           193,
-           255,
-           247,
-           216,
-           258,
-           228,
-           245,
-           221],
- &#x27;max&#x27;: 268,
- &#x27;min&#x27;: 182,
- &#x27;more_200&#x27;: 12,
- &#x27;name&#x27;: &#x27;Ландау Максим&#x27;,
- &#x27;place&#x27;: 1,
+                    <td class="code"><pre>{&#x27;avg&#x27;: 144.33333333333334,
+ &#x27;games&#x27;: [137, 133, 163],
+ &#x27;max&#x27;: 163,
+ &#x27;min&#x27;: 133,
+ &#x27;more_200&#x27;: 0,
+ &#x27;name&#x27;: &#x27;Васильева Анна&#x27;,
+ &#x27;place&#x27;: 14,
  &#x27;rang&#x27;: &#x27;МС&#x27;,
- &#x27;sum&#x27;: 3236}</pre></td>
+ &#x27;sum&#x27;: 433}</pre></td>
                   </tr>
                 
                   <tr>
                     <td>model</td>
-                    <td class="code"><pre>&lt;class &#x27;main.models.SpbCup&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;main.models.FirstPmModel&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>player</td>
-                    <td class="code"><pre>&lt;PlayerModel: PlayerModel object (3)&gt;</pre></td>
+                    <td class="code"><pre>&lt;PlayerModel: PlayerModel object (80)&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -854,12 +805,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>tournament</td>
-                    <td class="code"><pre>&lt;ResultsModel: Кубок СПБ 2023&gt;</pre></td>
+                    <td class="code"><pre>&lt;ResultsModel: Пулковский Меридиан 2024 - 3 этап&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>year</td>
-                    <td class="code"><pre>&lt;YearModel: 2023&gt;</pre></td>
+                    <td class="code"><pre>&lt;YearModel: 2024&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -871,47 +822,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame user">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/main/services/services.py</code>, line 47, in upload_results
+            <code class="fname">/code/main/services/services.py</code>, line 47, in upload_results
           
 
           
-            <div class="context" id="c140670039696576">
+            <div class="context" id="c140325199661504">
               
-                <ol start="40" class="pre-context" id="pre140670039696576">
+                <ol start="40" class="pre-context" id="pre140325199661504">
                 
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>        model_obj.place = results[&#x27;place&#x27;]</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>        model_obj.place = results[&#x27;place&#x27;]</pre></li>
                 
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>        model_obj.sum = results[&#x27;sum&#x27;]</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>        model_obj.sum = results[&#x27;sum&#x27;]</pre></li>
                 
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>        model_obj.avg = results[&#x27;avg&#x27;]</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>        model_obj.avg = results[&#x27;avg&#x27;]</pre></li>
                 
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>        for index, game in enumerate(results[&#x27;games&#x27;]):</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>        for index, game in enumerate(results[&#x27;games&#x27;]):</pre></li>
                 
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>            setattr(model_obj, f&#x27;game_{index + 1}&#x27;, game)</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>            setattr(model_obj, f&#x27;game_{index + 1}&#x27;, game)</pre></li>
                 
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre></pre></li>
                 
                 </ol>
               
               <ol start="47" class="context-line">
-                <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>        model_obj.save()</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>        model_obj.save()
+            ^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='48' class="post-context" id="post140670039696576">
+                <ol start='48' class="post-context" id="post140325199661504">
                   
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>    @staticmethod</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>    @staticmethod</pre></li>
                   
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>    def get_results(player: models.PlayerModel, tournament: models.ResultsModel, model):</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>    def get_results(player: models.PlayerModel, tournament: models.ResultsModel, model):</pre></li>
                   
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>        try:</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>        try:</pre></li>
                   
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>            tournament_obj = model.objects.get(player=player, tournament=tournament)</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>            tournament_obj = model.objects.get(player=player, tournament=tournament)</pre></li>
                   
-                  <li onclick="toggle('pre140670039696576', 'post140670039696576')"><pre>        except ObjectDoesNotExist:</pre></li>
+                  <li onclick="toggle('pre140325199661504', 'post140325199661504')"><pre>        except ObjectDoesNotExist:</pre></li>
                   
               </ol>
               
@@ -923,7 +875,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039696576">
+            <table class="vars" id="v140325199661504">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -934,63 +886,50 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>game</td>
-                    <td class="code"><pre>221</pre></td>
+                    <td class="code"><pre>163</pre></td>
                   </tr>
                 
                   <tr>
                     <td>index</td>
-                    <td class="code"><pre>13</pre></td>
+                    <td class="code"><pre>2</pre></td>
                   </tr>
                 
                   <tr>
                     <td>model</td>
-                    <td class="code"><pre>&lt;class &#x27;main.models.SpbCup&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;main.models.FirstPmModel&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>model_obj</td>
-                    <td class="code"><pre>&lt;SpbCup: SpbCup object (None)&gt;</pre></td>
+                    <td class="code"><pre>&lt;FirstPmModel: FirstPmModel object (None)&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>player</td>
-                    <td class="code"><pre>&lt;PlayerModel: PlayerModel object (3)&gt;</pre></td>
+                    <td class="code"><pre>&lt;PlayerModel: PlayerModel object (80)&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>results</td>
-                    <td class="code"><pre>{&#x27;avg&#x27;: 231.14285714285714,
- &#x27;games&#x27;: [203,
-           254,
-           209,
-           182,
-           268,
-           257,
-           193,
-           255,
-           247,
-           216,
-           258,
-           228,
-           245,
-           221],
- &#x27;max&#x27;: 268,
- &#x27;min&#x27;: 182,
- &#x27;more_200&#x27;: 12,
- &#x27;name&#x27;: &#x27;Ландау Максим&#x27;,
- &#x27;place&#x27;: 1,
+                    <td class="code"><pre>{&#x27;avg&#x27;: 144.33333333333334,
+ &#x27;games&#x27;: [137, 133, 163],
+ &#x27;max&#x27;: 163,
+ &#x27;min&#x27;: 133,
+ &#x27;more_200&#x27;: 0,
+ &#x27;name&#x27;: &#x27;Васильева Анна&#x27;,
+ &#x27;place&#x27;: 14,
  &#x27;rang&#x27;: &#x27;МС&#x27;,
- &#x27;sum&#x27;: 3236}</pre></td>
+ &#x27;sum&#x27;: 433}</pre></td>
                   </tr>
                 
                   <tr>
                     <td>tournament</td>
-                    <td class="code"><pre>&lt;ResultsModel: Кубок СПБ 2023&gt;</pre></td>
+                    <td class="code"><pre>&lt;ResultsModel: Пулковский Меридиан 2024 - 3 этап&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>year</td>
-                    <td class="code"><pre>&lt;YearModel: 2023&gt;</pre></td>
+                    <td class="code"><pre>&lt;YearModel: 2024&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -1002,47 +941,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py</code>, line 814, in save
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/models/base.py</code>, line 814, in save
           
 
           
-            <div class="context" id="c140670039695488">
+            <div class="context" id="c140325172678144">
               
-                <ol start="807" class="pre-context" id="pre140670039695488">
+                <ol start="807" class="pre-context" id="pre140325172678144">
                 
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>            for field in self._meta.concrete_fields:</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>            for field in self._meta.concrete_fields:</pre></li>
                 
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>                if not field.primary_key and not hasattr(field, &quot;through&quot;):</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>                if not field.primary_key and not hasattr(field, &quot;through&quot;):</pre></li>
                 
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>                    field_names.add(field.attname)</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>                    field_names.add(field.attname)</pre></li>
                 
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>            loaded_fields = field_names.difference(deferred_fields)</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>            loaded_fields = field_names.difference(deferred_fields)</pre></li>
                 
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>            if loaded_fields:</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>            if loaded_fields:</pre></li>
                 
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>                update_fields = frozenset(loaded_fields)</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>                update_fields = frozenset(loaded_fields)</pre></li>
                 
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre></pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre></pre></li>
                 
                 </ol>
               
               <ol start="814" class="context-line">
-                <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>        self.save_base(</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>        self.save_base(
+             ^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='815' class="post-context" id="post140670039695488">
+                <ol start='815' class="post-context" id="post140325172678144">
                   
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>            using=using,</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>            using=using,</pre></li>
                   
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>            force_insert=force_insert,</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>            force_insert=force_insert,</pre></li>
                   
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>            force_update=force_update,</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>            force_update=force_update,</pre></li>
                   
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>            update_fields=update_fields,</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>            update_fields=update_fields,</pre></li>
                   
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre>        )</pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre>        )</pre></li>
                   
-                  <li onclick="toggle('pre140670039695488', 'post140670039695488')"><pre></pre></li>
+                  <li onclick="toggle('pre140325172678144', 'post140325172678144')"><pre></pre></li>
                   
               </ol>
               
@@ -1054,7 +994,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039695488">
+            <table class="vars" id="v140325172678144">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1080,7 +1020,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;SpbCup: SpbCup object (None)&gt;</pre></td>
+                    <td class="code"><pre>&lt;FirstPmModel: FirstPmModel object (None)&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1102,47 +1042,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py</code>, line 877, in save_base
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/models/base.py</code>, line 877, in save_base
           
 
           
-            <div class="context" id="c140670041121856">
+            <div class="context" id="c140325199660416">
               
-                <ol start="870" class="pre-context" id="pre140670041121856">
+                <ol start="870" class="pre-context" id="pre140325199660416">
                 
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>            context_manager = transaction.atomic(using=using, savepoint=False)</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>            context_manager = transaction.atomic(using=using, savepoint=False)</pre></li>
                 
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>        else:</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>        else:</pre></li>
                 
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>            context_manager = transaction.mark_for_rollback_on_error(using=using)</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>            context_manager = transaction.mark_for_rollback_on_error(using=using)</pre></li>
                 
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>        with context_manager:</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>        with context_manager:</pre></li>
                 
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>            parent_inserted = False</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>            parent_inserted = False</pre></li>
                 
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>            if not raw:</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>            if not raw:</pre></li>
                 
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>                parent_inserted = self._save_parents(cls, using, update_fields)</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>                parent_inserted = self._save_parents(cls, using, update_fields)</pre></li>
                 
                 </ol>
               
               <ol start="877" class="context-line">
-                <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>            updated = self._save_table(</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>            updated = self._save_table(
+                           </pre> <span>…</span></li>
               </ol>
               
-                <ol start='878' class="post-context" id="post140670041121856">
+                <ol start='878' class="post-context" id="post140325199660416">
                   
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>                raw,</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>                raw,</pre></li>
                   
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>                cls,</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>                cls,</pre></li>
                   
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>                force_insert or parent_inserted,</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>                force_insert or parent_inserted,</pre></li>
                   
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>                force_update,</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>                force_update,</pre></li>
                   
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>                using,</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>                using,</pre></li>
                   
-                  <li onclick="toggle('pre140670041121856', 'post140670041121856')"><pre>                update_fields,</pre></li>
+                  <li onclick="toggle('pre140325199660416', 'post140325199660416')"><pre>                update_fields,</pre></li>
                   
               </ol>
               
@@ -1154,7 +1095,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670041121856">
+            <table class="vars" id="v140325199660416">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1165,12 +1106,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>cls</td>
-                    <td class="code"><pre>&lt;class &#x27;main.models.SpbCup&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;main.models.FirstPmModel&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>context_manager</td>
-                    <td class="code"><pre>&lt;contextlib._GeneratorContextManager object at 0x7ff04ba04370&gt;</pre></td>
+                    <td class="code"><pre>&lt;contextlib._GeneratorContextManager object at 0x7fa0025cc680&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1185,12 +1126,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>meta</td>
-                    <td class="code"><pre>&lt;Options for SpbCup&gt;</pre></td>
+                    <td class="code"><pre>&lt;Options for FirstPmModel&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>origin</td>
-                    <td class="code"><pre>&lt;class &#x27;main.models.SpbCup&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;main.models.FirstPmModel&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1205,7 +1146,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;SpbCup: SpbCup object (None)&gt;</pre></td>
+                    <td class="code"><pre>&lt;FirstPmModel: FirstPmModel object (None)&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1227,47 +1168,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py</code>, line 1020, in _save_table
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/models/base.py</code>, line 1020, in _save_table
           
 
           
-            <div class="context" id="c140670041121792">
+            <div class="context" id="c140325199660032">
               
-                <ol start="1013" class="pre-context" id="pre140670041121792">
+                <ol start="1013" class="pre-context" id="pre140325199660032">
                 
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>                    )[&quot;_order__max&quot;]</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>                    )[&quot;_order__max&quot;]</pre></li>
                 
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>                )</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>                )</pre></li>
                 
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>            fields = meta.local_concrete_fields</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>            fields = meta.local_concrete_fields</pre></li>
                 
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>            if not pk_set:</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>            if not pk_set:</pre></li>
                 
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>                fields = [f for f in fields if f is not meta.auto_field]</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>                fields = [f for f in fields if f is not meta.auto_field]</pre></li>
                 
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>            returning_fields = meta.db_returning_fields</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>            returning_fields = meta.db_returning_fields</pre></li>
                 
                 </ol>
               
               <ol start="1020" class="context-line">
-                <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>            results = self._do_insert(</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>            results = self._do_insert(
+                            </pre> <span>…</span></li>
               </ol>
               
-                <ol start='1021' class="post-context" id="post140670041121792">
+                <ol start='1021' class="post-context" id="post140325199660032">
                   
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>                cls._base_manager, using, fields, returning_fields, raw</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>                cls._base_manager, using, fields, returning_fields, raw</pre></li>
                   
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>            )</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>            )</pre></li>
                   
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>            if results:</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>            if results:</pre></li>
                   
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>                for value, field in zip(results[0], returning_fields):</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>                for value, field in zip(results[0], returning_fields):</pre></li>
                   
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>                    setattr(self, field.attname, value)</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>                    setattr(self, field.attname, value)</pre></li>
                   
-                  <li onclick="toggle('pre140670041121792', 'post140670041121792')"><pre>        return updated</pre></li>
+                  <li onclick="toggle('pre140325199660032', 'post140325199660032')"><pre>        return updated</pre></li>
                   
               </ol>
               
@@ -1279,7 +1221,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670041121792">
+            <table class="vars" id="v140325199660032">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1290,7 +1232,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>cls</td>
-                    <td class="code"><pre>&lt;class &#x27;main.models.SpbCup&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;main.models.FirstPmModel&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1306,17 +1248,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
  &lt;django.db.models.fields.SmallIntegerField: game_3&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_4&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_5&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_6&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_7&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_8&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_9&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_10&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_11&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_12&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_13&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_14&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_15&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_16&gt;]</pre></td>
+ &lt;django.db.models.fields.SmallIntegerField: game_6&gt;]</pre></td>
                   </tr>
                 
                   <tr>
@@ -1331,7 +1263,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>meta</td>
-                    <td class="code"><pre>&lt;Options for SpbCup&gt;</pre></td>
+                    <td class="code"><pre>&lt;Options for FirstPmModel&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1347,17 +1279,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
  &lt;django.db.models.fields.SmallIntegerField: game_3&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_4&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_5&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_6&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_7&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_8&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_9&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_10&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_11&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_12&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_13&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_14&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_15&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_16&gt;]</pre></td>
+ &lt;django.db.models.fields.SmallIntegerField: game_6&gt;]</pre></td>
                   </tr>
                 
                   <tr>
@@ -1382,7 +1304,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;SpbCup: SpbCup object (None)&gt;</pre></td>
+                    <td class="code"><pre>&lt;FirstPmModel: FirstPmModel object (None)&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1409,47 +1331,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py</code>, line 1061, in _do_insert
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/models/base.py</code>, line 1061, in _do_insert
           
 
           
-            <div class="context" id="c140670039655104">
+            <div class="context" id="c140325173316416">
               
-                <ol start="1054" class="pre-context" id="pre140670039655104">
+                <ol start="1054" class="pre-context" id="pre140325173316416">
                 
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>        return filtered._update(values) &gt; 0</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>        return filtered._update(values) &gt; 0</pre></li>
                 
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre></pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>    def _do_insert(self, manager, using, fields, returning_fields, raw):</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>    def _do_insert(self, manager, using, fields, returning_fields, raw):</pre></li>
                 
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>        &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>        &quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>        Do an INSERT. If returning_fields is defined then this method should</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>        Do an INSERT. If returning_fields is defined then this method should</pre></li>
                 
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>        return the newly created data for the model.</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>        return the newly created data for the model.</pre></li>
                 
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>        &quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>        &quot;&quot;&quot;</pre></li>
                 
                 </ol>
               
               <ol start="1061" class="context-line">
-                <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>        return manager._insert(</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>        return manager._insert(
+                     </pre> <span>…</span></li>
               </ol>
               
-                <ol start='1062' class="post-context" id="post140670039655104">
+                <ol start='1062' class="post-context" id="post140325173316416">
                   
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>            [self],</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>            [self],</pre></li>
                   
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>            fields=fields,</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>            fields=fields,</pre></li>
                   
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>            returning_fields=returning_fields,</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>            returning_fields=returning_fields,</pre></li>
                   
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>            using=using,</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>            using=using,</pre></li>
                   
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>            raw=raw,</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>            raw=raw,</pre></li>
                   
-                  <li onclick="toggle('pre140670039655104', 'post140670039655104')"><pre>        )</pre></li>
+                  <li onclick="toggle('pre140325173316416', 'post140325173316416')"><pre>        )</pre></li>
                   
               </ol>
               
@@ -1461,7 +1384,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039655104">
+            <table class="vars" id="v140325173316416">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1483,22 +1406,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
  &lt;django.db.models.fields.SmallIntegerField: game_3&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_4&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_5&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_6&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_7&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_8&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_9&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_10&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_11&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_12&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_13&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_14&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_15&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_16&gt;]</pre></td>
+ &lt;django.db.models.fields.SmallIntegerField: game_6&gt;]</pre></td>
                   </tr>
                 
                   <tr>
                     <td>manager</td>
-                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7ff04bbdbfa0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7fa0001d2390&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1513,7 +1426,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;SpbCup: SpbCup object (None)&gt;</pre></td>
+                    <td class="code"><pre>&lt;FirstPmModel: FirstPmModel object (None)&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1530,47 +1443,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/manager.py</code>, line 87, in manager_method
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/models/manager.py</code>, line 87, in manager_method
           
 
           
-            <div class="context" id="c140670039657728">
+            <div class="context" id="c140325173082304">
               
-                <ol start="80" class="pre-context" id="pre140670039657728">
+                <ol start="80" class="pre-context" id="pre140325173082304">
                 
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>        return []</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>        return []</pre></li>
                 
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre></pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>    @classmethod</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>    @classmethod</pre></li>
                 
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>    def _get_queryset_methods(cls, queryset_class):</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>    def _get_queryset_methods(cls, queryset_class):</pre></li>
                 
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>        def create_method(name, method):</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>        def create_method(name, method):</pre></li>
                 
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>            @wraps(method)</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>            @wraps(method)</pre></li>
                 
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>            def manager_method(self, *args, **kwargs):</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>            def manager_method(self, *args, **kwargs):</pre></li>
                 
                 </ol>
               
               <ol start="87" class="context-line">
-                <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>                return getattr(self.get_queryset(), name)(*args, **kwargs)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>                return getattr(self.get_queryset(), name)(*args, **kwargs)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='88' class="post-context" id="post140670039657728">
+                <ol start='88' class="post-context" id="post140325173082304">
                   
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre></pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>            return manager_method</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>            return manager_method</pre></li>
                   
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre></pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>        new_methods = {}</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>        new_methods = {}</pre></li>
                   
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>        for name, method in inspect.getmembers(</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>        for name, method in inspect.getmembers(</pre></li>
                   
-                  <li onclick="toggle('pre140670039657728', 'post140670039657728')"><pre>            queryset_class, predicate=inspect.isfunction</pre></li>
+                  <li onclick="toggle('pre140325173082304', 'post140325173082304')"><pre>            queryset_class, predicate=inspect.isfunction</pre></li>
                   
               </ol>
               
@@ -1582,7 +1496,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039657728">
+            <table class="vars" id="v140325173082304">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1593,7 +1507,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>args</td>
-                    <td class="code"><pre>([&lt;SpbCup: SpbCup object (None)&gt;],)</pre></td>
+                    <td class="code"><pre>([&lt;FirstPmModel: FirstPmModel object (None)&gt;],)</pre></td>
                   </tr>
                 
                   <tr>
@@ -1609,17 +1523,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
             &lt;django.db.models.fields.SmallIntegerField: game_3&gt;,
             &lt;django.db.models.fields.SmallIntegerField: game_4&gt;,
             &lt;django.db.models.fields.SmallIntegerField: game_5&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_6&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_7&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_8&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_9&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_10&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_11&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_12&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_13&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_14&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_15&gt;,
-            &lt;django.db.models.fields.SmallIntegerField: game_16&gt;],
+            &lt;django.db.models.fields.SmallIntegerField: game_6&gt;],
  &#x27;raw&#x27;: False,
  &#x27;returning_fields&#x27;: [&lt;django.db.models.fields.BigAutoField: id&gt;],
  &#x27;using&#x27;: &#x27;default&#x27;}</pre></td>
@@ -1632,7 +1536,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7ff04bbdbfa0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.models.manager.Manager object at 0x7fa0001d2390&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -1644,47 +1548,48 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/query.py</code>, line 1805, in _insert
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/models/query.py</code>, line 1805, in _insert
           
 
           
-            <div class="context" id="c140670039654848">
+            <div class="context" id="c140325173247552">
               
-                <ol start="1798" class="pre-context" id="pre140670039654848">
+                <ol start="1798" class="pre-context" id="pre140325173247552">
                 
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>        query = sql.InsertQuery(</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>        query = sql.InsertQuery(</pre></li>
                 
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>            self.model,</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>            self.model,</pre></li>
                 
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>            on_conflict=on_conflict,</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>            on_conflict=on_conflict,</pre></li>
                 
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>            update_fields=update_fields,</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>            update_fields=update_fields,</pre></li>
                 
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>            unique_fields=unique_fields,</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>            unique_fields=unique_fields,</pre></li>
                 
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>        )</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>        )</pre></li>
                 
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>        query.insert_values(fields, objs, raw=raw)</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>        query.insert_values(fields, objs, raw=raw)</pre></li>
                 
                 </ol>
               
               <ol start="1805" class="context-line">
-                <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>        return query.get_compiler(using=using).execute_sql(returning_fields)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>        return query.get_compiler(using=using).execute_sql(returning_fields)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='1806' class="post-context" id="post140670039654848">
+                <ol start='1806' class="post-context" id="post140325173247552">
                   
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre></pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>    _insert.alters_data = True</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>    _insert.alters_data = True</pre></li>
                   
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>    _insert.queryset_only = False</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>    _insert.queryset_only = False</pre></li>
                   
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre></pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>    def _batched_insert(</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>    def _batched_insert(</pre></li>
                   
-                  <li onclick="toggle('pre140670039654848', 'post140670039654848')"><pre>        self,</pre></li>
+                  <li onclick="toggle('pre140325173247552', 'post140325173247552')"><pre>        self,</pre></li>
                   
               </ol>
               
@@ -1696,7 +1601,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039654848">
+            <table class="vars" id="v140325173247552">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1718,22 +1623,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
  &lt;django.db.models.fields.SmallIntegerField: game_3&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_4&gt;,
  &lt;django.db.models.fields.SmallIntegerField: game_5&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_6&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_7&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_8&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_9&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_10&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_11&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_12&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_13&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_14&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_15&gt;,
- &lt;django.db.models.fields.SmallIntegerField: game_16&gt;]</pre></td>
+ &lt;django.db.models.fields.SmallIntegerField: game_6&gt;]</pre></td>
                   </tr>
                 
                   <tr>
                     <td>objs</td>
-                    <td class="code"><pre>[&lt;SpbCup: SpbCup object (None)&gt;]</pre></td>
+                    <td class="code"><pre>[&lt;FirstPmModel: FirstPmModel object (None)&gt;]</pre></td>
                   </tr>
                 
                   <tr>
@@ -1743,7 +1638,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>query</td>
-                    <td class="code"><pre>&lt;django.db.models.sql.subqueries.InsertQuery object at 0x7ff04bd62bb0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.models.sql.subqueries.InsertQuery object at 0x7fa002588e00&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1758,10 +1653,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>Error in formatting: ProgrammingError: relation &quot;main_spbcup&quot; does not exist
-LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;game_16&quot; FROM &quot;main_spbc...
-                                                             ^
-</pre></td>
+                    <td class="code"><pre>&lt;QuerySet [&lt;FirstPmModel: FirstPmModel object (1)&gt;, &lt;FirstPmModel: FirstPmModel object (2)&gt;, &lt;FirstPmModel: FirstPmModel object (3)&gt;, &lt;FirstPmModel: FirstPmModel object (4)&gt;, &lt;FirstPmModel: FirstPmModel object (5)&gt;, &lt;FirstPmModel: FirstPmModel object (6)&gt;, &lt;FirstPmModel: FirstPmModel object (7)&gt;, &lt;FirstPmModel: FirstPmModel object (8)&gt;, &lt;FirstPmModel: FirstPmModel object (9)&gt;, &lt;FirstPmModel: FirstPmModel object (10)&gt;, &lt;FirstPmModel: FirstPmModel object (11)&gt;, &lt;FirstPmModel: FirstPmModel object (12)&gt;, &lt;FirstPmModel: FirstPmModel object (13)&gt;, &lt;FirstPmModel: FirstPmModel object (14)&gt;, &lt;FirstPmModel: FirstPmModel object (15)&gt;, &lt;FirstPmModel: FirstPmModel object (16)&gt;, &lt;FirstPmModel: FirstPmModel object (17)&gt;, &lt;FirstPmModel: FirstPmModel object (18)&gt;, &lt;FirstPmModel: FirstPmModel object (19)&gt;, &lt;FirstPmModel: FirstPmModel object (20)&gt;, &#x27;...(remaining elements truncated)...&#x27;]&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -1788,47 +1680,48 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py</code>, line 1820, in execute_sql
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py</code>, line 1820, in execute_sql
           
 
           
-            <div class="context" id="c140670039656704">
+            <div class="context" id="c140325173357312">
               
-                <ol start="1813" class="pre-context" id="pre140670039656704">
+                <ol start="1813" class="pre-context" id="pre140325173357312">
                 
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>            and len(self.query.objs) != 1</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>            and len(self.query.objs) != 1</pre></li>
                 
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>            and not self.connection.features.can_return_rows_from_bulk_insert</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>            and not self.connection.features.can_return_rows_from_bulk_insert</pre></li>
                 
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>        )</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>        )</pre></li>
                 
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>        opts = self.query.get_meta()</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>        opts = self.query.get_meta()</pre></li>
                 
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>        self.returning_fields = returning_fields</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>        self.returning_fields = returning_fields</pre></li>
                 
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>        with self.connection.cursor() as cursor:</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>        with self.connection.cursor() as cursor:</pre></li>
                 
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>            for sql, params in self.as_sql():</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>            for sql, params in self.as_sql():</pre></li>
                 
                 </ol>
               
               <ol start="1820" class="context-line">
-                <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>                cursor.execute(sql, params)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>                cursor.execute(sql, params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='1821' class="post-context" id="post140670039656704">
+                <ol start='1821' class="post-context" id="post140325173357312">
                   
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>            if not self.returning_fields:</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>            if not self.returning_fields:</pre></li>
                   
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>                return []</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>                return []</pre></li>
                   
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>            if (</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>            if (</pre></li>
                   
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>                self.connection.features.can_return_rows_from_bulk_insert</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>                self.connection.features.can_return_rows_from_bulk_insert</pre></li>
                   
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>                and len(self.query.objs) &gt; 1</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>                and len(self.query.objs) &gt; 1</pre></li>
                   
-                  <li onclick="toggle('pre140670039656704', 'post140670039656704')"><pre>            ):</pre></li>
+                  <li onclick="toggle('pre140325173357312', 'post140325173357312')"><pre>            ):</pre></li>
                   
               </ol>
               
@@ -1840,7 +1733,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039656704">
+            <table class="vars" id="v140325173357312">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1851,38 +1744,17 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                 
                   <tr>
                     <td>cursor</td>
-                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>opts</td>
-                    <td class="code"><pre>&lt;Options for SpbCup&gt;</pre></td>
+                    <td class="code"><pre>&lt;Options for FirstPmModel&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>params</td>
-                    <td class="code"><pre>(1,
- 3,
- 26,
- 3236,
- Decimal(&#x27;231.14&#x27;),
- 1,
- 203,
- 254,
- 209,
- 182,
- 268,
- 257,
- 193,
- 255,
- 247,
- 216,
- 258,
- 228,
- 245,
- 221,
- None,
- None)</pre></td>
+                    <td class="code"><pre>(4, 80, 47, 433, Decimal(&#x27;144.33&#x27;), 14, 137, 133, 163, None, None, None)</pre></td>
                   </tr>
                 
                   <tr>
@@ -1892,17 +1764,15 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;SQLInsertCompiler model=SpbCup connection=&lt;DatabaseWrapper vendor=&#x27;postgresql&#x27; alias=&#x27;default&#x27;&gt; using=&#x27;default&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;SQLInsertCompiler model=FirstPmModel connection=&lt;DatabaseWrapper vendor=&#x27;postgresql&#x27; alias=&#x27;default&#x27;&gt; using=&#x27;default&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>sql</td>
-                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &quot;sum&quot;, &#x27;
- &#x27;&quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &quot;game_6&quot;, &#x27;
- &#x27;&quot;game_7&quot;, &quot;game_8&quot;, &quot;game_9&quot;, &quot;game_10&quot;, &quot;game_11&quot;, &quot;game_12&quot;, &quot;game_13&quot;, &#x27;
- &#x27;&quot;game_14&quot;, &quot;game_15&quot;, &quot;game_16&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, &#x27;
- &#x27;%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
- &#x27;&quot;main_spbcup&quot;.&quot;id&quot;&#x27;)</pre></td>
+                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_firstpmmodel&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &#x27;
+ &#x27;&quot;sum&quot;, &quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &#x27;
+ &#x27;&quot;game_6&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
+ &#x27;&quot;main_firstpmmodel&quot;.&quot;id&quot;&#x27;)</pre></td>
                   </tr>
                 
               </tbody>
@@ -1914,47 +1784,48 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py</code>, line 102, in execute
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py</code>, line 102, in execute
           
 
           
-            <div class="context" id="c140670039655168">
+            <div class="context" id="c140325199666432">
               
-                <ol start="95" class="pre-context" id="pre140670039655168">
+                <ol start="95" class="pre-context" id="pre140325199666432">
                 
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>class CursorDebugWrapper(CursorWrapper):</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>class CursorDebugWrapper(CursorWrapper):</pre></li>
                 
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>    # XXX callproc isn&#x27;t instrumented at this time.</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>    # XXX callproc isn&#x27;t instrumented at this time.</pre></li>
                 
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>    def execute(self, sql, params=None):</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>    def execute(self, sql, params=None):</pre></li>
                 
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>        with self.debug_sql(sql, params, use_last_executed_query=True):</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>        with self.debug_sql(sql, params, use_last_executed_query=True):</pre></li>
                 
                 </ol>
               
               <ol start="102" class="context-line">
-                <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>            return super().execute(sql, params)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>            return super().execute(sql, params)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='103' class="post-context" id="post140670039655168">
+                <ol start='103' class="post-context" id="post140325199666432">
                   
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>    def executemany(self, sql, param_list):</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>    def executemany(self, sql, param_list):</pre></li>
                   
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>        with self.debug_sql(sql, param_list, many=True):</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>        with self.debug_sql(sql, param_list, many=True):</pre></li>
                   
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>            return super().executemany(sql, param_list)</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>            return super().executemany(sql, param_list)</pre></li>
                   
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039655168', 'post140670039655168')"><pre>    @contextmanager</pre></li>
+                  <li onclick="toggle('pre140325199666432', 'post140325199666432')"><pre>    @contextmanager</pre></li>
                   
               </ol>
               
@@ -1966,7 +1837,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039655168">
+            <table class="vars" id="v140325199666432">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -1982,43 +1853,20 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                 
                   <tr>
                     <td>params</td>
-                    <td class="code"><pre>(1,
- 3,
- 26,
- 3236,
- Decimal(&#x27;231.14&#x27;),
- 1,
- 203,
- 254,
- 209,
- 182,
- 268,
- 257,
- 193,
- 255,
- 247,
- 216,
- 258,
- 228,
- 245,
- 221,
- None,
- None)</pre></td>
+                    <td class="code"><pre>(4, 80, 47, 433, Decimal(&#x27;144.33&#x27;), 14, 137, 133, 163, None, None, None)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>sql</td>
-                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &quot;sum&quot;, &#x27;
- &#x27;&quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &quot;game_6&quot;, &#x27;
- &#x27;&quot;game_7&quot;, &quot;game_8&quot;, &quot;game_9&quot;, &quot;game_10&quot;, &quot;game_11&quot;, &quot;game_12&quot;, &quot;game_13&quot;, &#x27;
- &#x27;&quot;game_14&quot;, &quot;game_15&quot;, &quot;game_16&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, &#x27;
- &#x27;%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
- &#x27;&quot;main_spbcup&quot;.&quot;id&quot;&#x27;)</pre></td>
+                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_firstpmmodel&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &#x27;
+ &#x27;&quot;sum&quot;, &quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &#x27;
+ &#x27;&quot;game_6&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
+ &#x27;&quot;main_firstpmmodel&quot;.&quot;id&quot;&#x27;)</pre></td>
                   </tr>
                 
               </tbody>
@@ -2030,47 +1878,48 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py</code>, line 67, in execute
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py</code>, line 67, in execute
           
 
           
-            <div class="context" id="c140670039657792">
+            <div class="context" id="c140325199671552">
               
-                <ol start="60" class="pre-context" id="pre140670039657792">
+                <ol start="60" class="pre-context" id="pre140325199671552">
                 
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>            elif kparams is None:</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>            elif kparams is None:</pre></li>
                 
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>                return self.cursor.callproc(procname, params)</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>                return self.cursor.callproc(procname, params)</pre></li>
                 
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>            else:</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>            else:</pre></li>
                 
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>                params = params or ()</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>                params = params or ()</pre></li>
                 
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>                return self.cursor.callproc(procname, params, kparams)</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>                return self.cursor.callproc(procname, params, kparams)</pre></li>
                 
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>    def execute(self, sql, params=None):</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>    def execute(self, sql, params=None):</pre></li>
                 
                 </ol>
               
               <ol start="67" class="context-line">
-                <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>        return self._execute_with_wrappers(</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>        return self._execute_with_wrappers(
+                   </pre> <span>…</span></li>
               </ol>
               
-                <ol start='68' class="post-context" id="post140670039657792">
+                <ol start='68' class="post-context" id="post140325199671552">
                   
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>            sql, params, many=False, executor=self._execute</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>            sql, params, many=False, executor=self._execute</pre></li>
                   
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>        )</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>        )</pre></li>
                   
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>    def executemany(self, sql, param_list):</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>    def executemany(self, sql, param_list):</pre></li>
                   
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>        return self._execute_with_wrappers(</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>        return self._execute_with_wrappers(</pre></li>
                   
-                  <li onclick="toggle('pre140670039657792', 'post140670039657792')"><pre>            sql, param_list, many=True, executor=self._executemany</pre></li>
+                  <li onclick="toggle('pre140325199671552', 'post140325199671552')"><pre>            sql, param_list, many=True, executor=self._executemany</pre></li>
                   
               </ol>
               
@@ -2082,7 +1931,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039657792">
+            <table class="vars" id="v140325199671552">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -2093,43 +1942,20 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                 
                   <tr>
                     <td>params</td>
-                    <td class="code"><pre>(1,
- 3,
- 26,
- 3236,
- Decimal(&#x27;231.14&#x27;),
- 1,
- 203,
- 254,
- 209,
- 182,
- 268,
- 257,
- 193,
- 255,
- 247,
- 216,
- 258,
- 228,
- 245,
- 221,
- None,
- None)</pre></td>
+                    <td class="code"><pre>(4, 80, 47, 433, Decimal(&#x27;144.33&#x27;), 14, 137, 133, 163, None, None, None)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>sql</td>
-                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &quot;sum&quot;, &#x27;
- &#x27;&quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &quot;game_6&quot;, &#x27;
- &#x27;&quot;game_7&quot;, &quot;game_8&quot;, &quot;game_9&quot;, &quot;game_10&quot;, &quot;game_11&quot;, &quot;game_12&quot;, &quot;game_13&quot;, &#x27;
- &#x27;&quot;game_14&quot;, &quot;game_15&quot;, &quot;game_16&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, &#x27;
- &#x27;%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
- &#x27;&quot;main_spbcup&quot;.&quot;id&quot;&#x27;)</pre></td>
+                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_firstpmmodel&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &#x27;
+ &#x27;&quot;sum&quot;, &quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &#x27;
+ &#x27;&quot;game_6&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
+ &#x27;&quot;main_firstpmmodel&quot;.&quot;id&quot;&#x27;)</pre></td>
                   </tr>
                 
               </tbody>
@@ -2141,47 +1967,48 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py</code>, line 80, in _execute_with_wrappers
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py</code>, line 80, in _execute_with_wrappers
           
 
           
-            <div class="context" id="c140670039658304">
+            <div class="context" id="c140325211099712">
               
-                <ol start="73" class="pre-context" id="pre140670039658304">
+                <ol start="73" class="pre-context" id="pre140325211099712">
                 
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>            sql, param_list, many=True, executor=self._executemany</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>            sql, param_list, many=True, executor=self._executemany</pre></li>
                 
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>        )</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>        )</pre></li>
                 
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre></pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>    def _execute_with_wrappers(self, sql, params, many, executor):</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>    def _execute_with_wrappers(self, sql, params, many, executor):</pre></li>
                 
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>        context = {&quot;connection&quot;: self.db, &quot;cursor&quot;: self}</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>        context = {&quot;connection&quot;: self.db, &quot;cursor&quot;: self}</pre></li>
                 
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>        for wrapper in reversed(self.db.execute_wrappers):</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>        for wrapper in reversed(self.db.execute_wrappers):</pre></li>
                 
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>            executor = functools.partial(wrapper, executor)</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>            executor = functools.partial(wrapper, executor)</pre></li>
                 
                 </ol>
               
               <ol start="80" class="context-line">
-                <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>        return executor(sql, params, many, context)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>        return executor(sql, params, many, context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='81' class="post-context" id="post140670039658304">
+                <ol start='81' class="post-context" id="post140325211099712">
                   
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre></pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
                   
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
                   
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>        with self.db.wrap_database_errors:</pre></li>
                   
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>            if params is None:</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>            if params is None:</pre></li>
                   
-                  <li onclick="toggle('pre140670039658304', 'post140670039658304')"><pre>                # params default might be backend specific.</pre></li>
+                  <li onclick="toggle('pre140325211099712', 'post140325211099712')"><pre>                # params default might be backend specific.</pre></li>
                   
               </ol>
               
@@ -2193,7 +2020,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039658304">
+            <table class="vars" id="v140325211099712">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -2205,12 +2032,12 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                   <tr>
                     <td>context</td>
                     <td class="code"><pre>{&#x27;connection&#x27;: &lt;DatabaseWrapper vendor=&#x27;postgresql&#x27; alias=&#x27;default&#x27;&gt;,
- &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;}</pre></td>
+ &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;}</pre></td>
                   </tr>
                 
                   <tr>
                     <td>executor</td>
-                    <td class="code"><pre>&lt;bound method CursorWrapper._execute of &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;&gt;</pre></td>
+                    <td class="code"><pre>&lt;bound method CursorWrapper._execute of &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -2220,43 +2047,20 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                 
                   <tr>
                     <td>params</td>
-                    <td class="code"><pre>(1,
- 3,
- 26,
- 3236,
- Decimal(&#x27;231.14&#x27;),
- 1,
- 203,
- 254,
- 209,
- 182,
- 268,
- 257,
- 193,
- 255,
- 247,
- 216,
- 258,
- 228,
- 245,
- 221,
- None,
- None)</pre></td>
+                    <td class="code"><pre>(4, 80, 47, 433, Decimal(&#x27;144.33&#x27;), 14, 137, 133, 163, None, None, None)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>sql</td>
-                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &quot;sum&quot;, &#x27;
- &#x27;&quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &quot;game_6&quot;, &#x27;
- &#x27;&quot;game_7&quot;, &quot;game_8&quot;, &quot;game_9&quot;, &quot;game_10&quot;, &quot;game_11&quot;, &quot;game_12&quot;, &quot;game_13&quot;, &#x27;
- &#x27;&quot;game_14&quot;, &quot;game_15&quot;, &quot;game_16&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, &#x27;
- &#x27;%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
- &#x27;&quot;main_spbcup&quot;.&quot;id&quot;&#x27;)</pre></td>
+                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_firstpmmodel&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &#x27;
+ &#x27;&quot;sum&quot;, &quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &#x27;
+ &#x27;&quot;game_6&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
+ &#x27;&quot;main_firstpmmodel&quot;.&quot;id&quot;&#x27;)</pre></td>
                   </tr>
                 
               </tbody>
@@ -2268,47 +2072,48 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py</code>, line 89, in _execute
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py</code>, line 84, in _execute
           
 
           
-            <div class="context" id="c140670039656192">
+            <div class="context" id="c140325199518528">
               
-                <ol start="82" class="pre-context" id="pre140670039656192">
+                <ol start="77" class="pre-context" id="pre140325199518528">
                 
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>        context = {&quot;connection&quot;: self.db, &quot;cursor&quot;: self}</pre></li>
                 
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>        for wrapper in reversed(self.db.execute_wrappers):</pre></li>
                 
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>            executor = functools.partial(wrapper, executor)</pre></li>
                 
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>            if params is None:</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>        return executor(sql, params, many, context)</pre></li>
                 
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>                # params default might be backend specific.</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>                return self.cursor.execute(sql)</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
                 
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>            else:</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
                 
                 </ol>
               
-              <ol start="89" class="context-line">
-                <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>                return self.cursor.execute(sql, params)</pre> <span>…</span></li>
+              <ol start="84" class="context-line">
+                <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>        with self.db.wrap_database_errors:
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='90' class="post-context" id="post140670039656192">
+                <ol start='85' class="post-context" id="post140325199518528">
                   
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>            if params is None:</pre></li>
                   
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>                # params default might be backend specific.</pre></li>
                   
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>                return self.cursor.execute(sql)</pre></li>
                   
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>            else:</pre></li>
                   
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre>                return self.cursor.execute(sql, params)</pre></li>
                   
-                  <li onclick="toggle('pre140670039656192', 'post140670039656192')"><pre></pre></li>
+                  <li onclick="toggle('pre140325199518528', 'post140325199518528')"><pre></pre></li>
                   
               </ol>
               
@@ -2320,7 +2125,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670039656192">
+            <table class="vars" id="v140325199518528">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -2333,48 +2138,25 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                     <td>ignored_wrapper_args</td>
                     <td class="code"><pre>(False,
  {&#x27;connection&#x27;: &lt;DatabaseWrapper vendor=&#x27;postgresql&#x27; alias=&#x27;default&#x27;&gt;,
-  &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;})</pre></td>
+  &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;})</pre></td>
                   </tr>
                 
                   <tr>
                     <td>params</td>
-                    <td class="code"><pre>(1,
- 3,
- 26,
- 3236,
- Decimal(&#x27;231.14&#x27;),
- 1,
- 203,
- 254,
- 209,
- 182,
- 268,
- 257,
- 193,
- 255,
- 247,
- 216,
- 258,
- 228,
- 245,
- 221,
- None,
- None)</pre></td>
+                    <td class="code"><pre>(4, 80, 47, 433, Decimal(&#x27;144.33&#x27;), 14, 137, 133, 163, None, None, None)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>sql</td>
-                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &quot;sum&quot;, &#x27;
- &#x27;&quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &quot;game_6&quot;, &#x27;
- &#x27;&quot;game_7&quot;, &quot;game_8&quot;, &quot;game_9&quot;, &quot;game_10&quot;, &quot;game_11&quot;, &quot;game_12&quot;, &quot;game_13&quot;, &#x27;
- &#x27;&quot;game_14&quot;, &quot;game_15&quot;, &quot;game_16&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, &#x27;
- &#x27;%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
- &#x27;&quot;main_spbcup&quot;.&quot;id&quot;&#x27;)</pre></td>
+                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_firstpmmodel&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &#x27;
+ &#x27;&quot;sum&quot;, &quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &#x27;
+ &#x27;&quot;game_6&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
+ &#x27;&quot;main_firstpmmodel&quot;.&quot;id&quot;&#x27;)</pre></td>
                   </tr>
                 
               </tbody>
@@ -2386,47 +2168,48 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/utils.py</code>, line 91, in __exit__
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/utils.py</code>, line 91, in __exit__
           
 
           
-            <div class="context" id="c140670041144576">
+            <div class="context" id="c140325173239424">
               
-                <ol start="84" class="pre-context" id="pre140670041144576">
+                <ol start="84" class="pre-context" id="pre140325173239424">
                 
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>            db_exc_type = getattr(self.wrapper.Database, dj_exc_type.__name__)</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>            db_exc_type = getattr(self.wrapper.Database, dj_exc_type.__name__)</pre></li>
                 
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>            if issubclass(exc_type, db_exc_type):</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>            if issubclass(exc_type, db_exc_type):</pre></li>
                 
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>                dj_exc_value = dj_exc_type(*exc_value.args)</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>                dj_exc_value = dj_exc_type(*exc_value.args)</pre></li>
                 
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>                # Only set the &#x27;errors_occurred&#x27; flag for errors that may make</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>                # Only set the &#x27;errors_occurred&#x27; flag for errors that may make</pre></li>
                 
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>                # the connection unusable.</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>                # the connection unusable.</pre></li>
                 
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>                if dj_exc_type not in (DataError, IntegrityError):</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>                if dj_exc_type not in (DataError, IntegrityError):</pre></li>
                 
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>                    self.wrapper.errors_occurred = True</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>                    self.wrapper.errors_occurred = True</pre></li>
                 
                 </ol>
               
               <ol start="91" class="context-line">
-                <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>                raise dj_exc_value.with_traceback(traceback) from exc_value</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>                raise dj_exc_value.with_traceback(traceback) from exc_value
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='92' class="post-context" id="post140670041144576">
+                <ol start='92' class="post-context" id="post140325173239424">
                   
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre></pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>    def __call__(self, func):</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>    def __call__(self, func):</pre></li>
                   
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>        # Note that we are intentionally not using @wraps here for performance</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>        # Note that we are intentionally not using @wraps here for performance</pre></li>
                   
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>        # reasons. Refs #21109.</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>        # reasons. Refs #21109.</pre></li>
                   
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>        def inner(*args, **kwargs):</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>        def inner(*args, **kwargs):</pre></li>
                   
-                  <li onclick="toggle('pre140670041144576', 'post140670041144576')"><pre>            with self:</pre></li>
+                  <li onclick="toggle('pre140325173239424', 'post140325173239424')"><pre>            with self:</pre></li>
                   
               </ol>
               
@@ -2438,7 +2221,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670041144576">
+            <table class="vars" id="v140325173239424">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -2449,37 +2232,37 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                 
                   <tr>
                     <td>db_exc_type</td>
-                    <td class="code"><pre>&lt;class &#x27;psycopg2.ProgrammingError&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;psycopg2.IntegrityError&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>dj_exc_type</td>
-                    <td class="code"><pre>&lt;class &#x27;django.db.utils.ProgrammingError&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;django.db.utils.IntegrityError&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>dj_exc_value</td>
-                    <td class="code"><pre>ProgrammingError(&#x27;relation &quot;main_spbcup&quot; does not exist\nLINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...\n                    ^\n&#x27;)</pre></td>
+                    <td class="code"><pre>IntegrityError(&#x27;null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint\nDETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).\n&#x27;)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>exc_type</td>
-                    <td class="code"><pre>&lt;class &#x27;psycopg2.errors.UndefinedTable&#x27;&gt;</pre></td>
+                    <td class="code"><pre>&lt;class &#x27;psycopg2.errors.NotNullViolation&#x27;&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>exc_value</td>
-                    <td class="code"><pre>UndefinedTable(&#x27;relation &quot;main_spbcup&quot; does not exist\nLINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...\n                    ^\n&#x27;)</pre></td>
+                    <td class="code"><pre>NotNullViolation(&#x27;null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint\nDETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).\n&#x27;)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.utils.DatabaseErrorWrapper object at 0x7ff04bbdb550&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.utils.DatabaseErrorWrapper object at 0x7fa00258b230&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>traceback</td>
-                    <td class="code"><pre>&lt;traceback object at 0x7ff04bd53b00&gt;</pre></td>
+                    <td class="code"><pre>&lt;traceback object at 0x7fa0002d4340&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -2491,47 +2274,48 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
         
         <li class="frame django">
           
-            <code class="fname">/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py</code>, line 89, in _execute
+            <code class="fname">/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py</code>, line 89, in _execute
           
 
           
-            <div class="context" id="c140670041144064">
+            <div class="context" id="c140325174461248">
               
-                <ol start="82" class="pre-context" id="pre140670041144064">
+                <ol start="82" class="pre-context" id="pre140325174461248">
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>    def _execute(self, sql, params, *ignored_wrapper_args):</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        with self.db.wrap_database_errors:</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>            if params is None:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>            if params is None:</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>                # params default might be backend specific.</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>                # params default might be backend specific.</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>                return self.cursor.execute(sql)</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>                return self.cursor.execute(sql)</pre></li>
                 
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>            else:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>            else:</pre></li>
                 
                 </ol>
               
               <ol start="89" class="context-line">
-                <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>                return self.cursor.execute(sql, params)</pre> <span>…</span></li>
+                <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>                return self.cursor.execute(sql, params)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre> <span>…</span></li>
               </ol>
               
-                <ol start='90' class="post-context" id="post140670041144064">
+                <ol start='90' class="post-context" id="post140325174461248">
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre></pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>    def _executemany(self, sql, param_list, *ignored_wrapper_args):</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        self.db.validate_no_broken_transaction()</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>        with self.db.wrap_database_errors:</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>        with self.db.wrap_database_errors:</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre>            return self.cursor.executemany(sql, param_list)</pre></li>
                   
-                  <li onclick="toggle('pre140670041144064', 'post140670041144064')"><pre></pre></li>
+                  <li onclick="toggle('pre140325174461248', 'post140325174461248')"><pre></pre></li>
                   
               </ol>
               
@@ -2543,7 +2327,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140670041144064">
+            <table class="vars" id="v140325174461248">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -2556,48 +2340,25 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
                     <td>ignored_wrapper_args</td>
                     <td class="code"><pre>(False,
  {&#x27;connection&#x27;: &lt;DatabaseWrapper vendor=&#x27;postgresql&#x27; alias=&#x27;default&#x27;&gt;,
-  &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;})</pre></td>
+  &#x27;cursor&#x27;: &lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;})</pre></td>
                   </tr>
                 
                   <tr>
                     <td>params</td>
-                    <td class="code"><pre>(1,
- 3,
- 26,
- 3236,
- Decimal(&#x27;231.14&#x27;),
- 1,
- 203,
- 254,
- 209,
- 182,
- 268,
- 257,
- 193,
- 255,
- 247,
- 216,
- 258,
- 228,
- 245,
- 221,
- None,
- None)</pre></td>
+                    <td class="code"><pre>(4, 80, 47, 433, Decimal(&#x27;144.33&#x27;), 14, 137, 133, 163, None, None, None)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7ff04bd62fd0&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.db.backends.postgresql.base.CursorDebugWrapper object at 0x7fa001a93050&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>sql</td>
-                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &quot;sum&quot;, &#x27;
- &#x27;&quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &quot;game_6&quot;, &#x27;
- &#x27;&quot;game_7&quot;, &quot;game_8&quot;, &quot;game_9&quot;, &quot;game_10&quot;, &quot;game_11&quot;, &quot;game_12&quot;, &quot;game_13&quot;, &#x27;
- &#x27;&quot;game_14&quot;, &quot;game_15&quot;, &quot;game_16&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, &#x27;
- &#x27;%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
- &#x27;&quot;main_spbcup&quot;.&quot;id&quot;&#x27;)</pre></td>
+                    <td class="code"><pre>(&#x27;INSERT INTO &quot;main_firstpmmodel&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tournament_id&quot;, &#x27;
+ &#x27;&quot;sum&quot;, &quot;avg&quot;, &quot;place&quot;, &quot;game_1&quot;, &quot;game_2&quot;, &quot;game_3&quot;, &quot;game_4&quot;, &quot;game_5&quot;, &#x27;
+ &#x27;&quot;game_6&quot;) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING &#x27;
+ &#x27;&quot;main_firstpmmodel&quot;.&quot;id&quot;&#x27;)</pre></td>
                   </tr>
                 
               </tbody>
@@ -2613,7 +2374,7 @@ LINE 1: ...n_spbcup&quot;.&quot;game_15&quot;, &quot;main_spbcup&quot;.&quot;gam
   <div id="pastebinTraceback" class="pastebin">
     <input type="hidden" name="language" value="PythonConsole">
     <input type="hidden" name="title"
-      value="ProgrammingError at /api/parse_results/">
+      value="IntegrityError at /api/parse_results/">
     <input type="hidden" name="source" value="Django Dpaste Agent">
     <input type="hidden" name="poster" value="Django">
     <textarea name="content" id="traceback_area" cols="140" rows="25">
@@ -2621,10 +2382,10 @@ Environment:
 
 
 Request Method: POST
-Request URL: http://127.0.0.1:8000/api/parse_results/
+Request URL: http://localhost:8080/api/parse_results/
 
 Django Version: 4.2.1
-Python Version: 3.8.4
+Python Version: 3.12.1
 Installed Applications:
 [&#x27;django.contrib.admin&#x27;,
  &#x27;django.contrib.auth&#x27;,
@@ -2651,54 +2412,71 @@ Installed Middleware:
 
 
 Traceback (most recent call last):
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
     return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The above exception (relation &quot;main_spbcup&quot; does not exist
-LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...
-                    ^
+The above exception (null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint
+DETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).
 ) was the direct cause of the following exception:
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
     return view_func(*args, **kwargs)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/main/views.py", line 345, in parse_results
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/main/views.py", line 380, in parse_results
     BaseResult.upload_results(model, item, year, player, tournament)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/main/services/services.py", line 47, in upload_results
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/main/services/services.py", line 47, in upload_results
     model_obj.save()
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
     self.save_base(
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    ^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 877, in save_base
     updated = self._save_table(
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+              
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1020, in _save_table
     results = self._do_insert(
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+              
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1061, in _do_insert
     return manager._insert(
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+           
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1805, in _insert
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1805, in _insert
     return query.get_compiler(using=using).execute_sql(returning_fields)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1820, in execute_sql
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1820, in execute_sql
     cursor.execute(sql, params)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 102, in execute
     return super().execute(sql, params)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 67, in execute
     return self._execute_with_wrappers(
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+           
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
     return executor(sql, params, many, context)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
-    return self.cursor.execute(sql, params)
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
     raise dj_exc_value.with_traceback(traceback) from exc_value
-  File "/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
     return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Exception Type: ProgrammingError at /api/parse_results/
-Exception Value: relation &quot;main_spbcup&quot; does not exist
-LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_id&quot;, &quot;tourname...
-                    ^
+Exception Type: IntegrityError at /api/parse_results/
+Exception Value: null value in column &quot;game_4&quot; of relation &quot;main_firstpmmodel&quot; violates not-null constraint
+DETAIL:  Failing row contains (361, 433, 144.33, 14, 137, 133, 163, null, null, null, 80, 47, 4).
 
 </textarea>
   <br><br>
@@ -2749,43 +2527,8 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
     <tbody>
       
         <tr>
-          <td>COMMAND_MODE</td>
-          <td class="code"><pre>&#x27;unix2003&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>CONDA_DEFAULT_ENV</td>
-          <td class="code"><pre>&#x27;base&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>CONDA_EXE</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko/opt/anaconda3/bin/conda&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>CONDA_PREFIX</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko/opt/anaconda3&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>CONDA_PROMPT_MODIFIER</td>
-          <td class="code"><pre>&#x27;(base) &#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>CONDA_PYTHON_EXE</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko/opt/anaconda3/bin/python&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>CONDA_SHLVL</td>
-          <td class="code"><pre>&#x27;1&#x27;</pre></td>
-        </tr>
-      
-        <tr>
           <td>CONTENT_LENGTH</td>
-          <td class="code"><pre>&#x27;11819&#x27;</pre></td>
+          <td class="code"><pre>&#x27;10314&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -2804,8 +2547,18 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         </tr>
       
         <tr>
+          <td>GPG_KEY</td>
+          <td class="code"><pre>&#x27;********************&#x27;</pre></td>
+        </tr>
+      
+        <tr>
           <td>HOME</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko&#x27;</pre></td>
+          <td class="code"><pre>&#x27;/root&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HOSTNAME</td>
+          <td class="code"><pre>&#x27;ef9ef310aa9e&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -2820,12 +2573,12 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>HTTP_CONNECTION</td>
-          <td class="code"><pre>&#x27;keep-alive&#x27;</pre></td>
+          <td class="code"><pre>&#x27;close&#x27;</pre></td>
         </tr>
       
         <tr>
           <td>HTTP_HOST</td>
-          <td class="code"><pre>&#x27;127.0.0.1:8000&#x27;</pre></td>
+          <td class="code"><pre>&#x27;localhost:8080&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -2834,24 +2587,13 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         </tr>
       
         <tr>
-          <td>LC_CTYPE</td>
-          <td class="code"><pre>&#x27;UTF-8&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>LOGNAME</td>
-          <td class="code"><pre>&#x27;maksimpanasenko&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>OLDPWD</td>
-          <td class="code"><pre>&#x27;/&#x27;</pre></td>
+          <td>LANG</td>
+          <td class="code"><pre>&#x27;C.UTF-8&#x27;</pre></td>
         </tr>
       
         <tr>
           <td>PATH</td>
-          <td class="code"><pre>(&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv/bin:/Users/maksimpanasenko/opt/anaconda3/bin:/Users/maksimpanasenko/opt/anaconda3/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware &#x27;
- &#x27;Fusion.app/Contents/Public:/usr/local/go/bin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin&#x27;)</pre></td>
+          <td class="code"><pre>&#x27;/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -2860,38 +2602,28 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         </tr>
       
         <tr>
-          <td>PS1</td>
-          <td class="code"><pre>&#x27;(venv) &#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>PWD</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>PYCHARM_DISPLAY_PORT</td>
-          <td class="code"><pre>&#x27;63342&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>PYCHARM_HOSTED</td>
-          <td class="code"><pre>&#x27;1&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>PYTHONIOENCODING</td>
-          <td class="code"><pre>&#x27;UTF-8&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>PYTHONPATH</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb:/Applications/PyCharm.app/Contents/plugins/python/helpers/pycharm_matplotlib_backend:/Applications/PyCharm.app/Contents/plugins/python/helpers/pycharm_display&#x27;</pre></td>
-        </tr>
-      
-        <tr>
           <td>PYTHONUNBUFFERED</td>
           <td class="code"><pre>&#x27;1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYTHON_GET_PIP_SHA256</td>
+          <td class="code"><pre>&#x27;7cfd4bdc4d475ea971f1c0710a5953bcc704d171f83c797b9529d9974502fcc6&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYTHON_GET_PIP_URL</td>
+          <td class="code"><pre>&#x27;https://github.com/pypa/get-pip/raw/049c52c665e8c5fd1751f942316e0a5c777d304f/public/get-pip.py&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYTHON_PIP_VERSION</td>
+          <td class="code"><pre>&#x27;23.2.1&#x27;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PYTHON_VERSION</td>
+          <td class="code"><pre>&#x27;3.12.1&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -2901,7 +2633,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>REMOTE_ADDR</td>
-          <td class="code"><pre>&#x27;127.0.0.1&#x27;</pre></td>
+          <td class="code"><pre>&#x27;172.21.0.1&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -2926,17 +2658,17 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>SERVER_NAME</td>
-          <td class="code"><pre>&#x27;1.0.0.127.in-addr.arpa&#x27;</pre></td>
+          <td class="code"><pre>&#x27;ef9ef310aa9e&#x27;</pre></td>
         </tr>
       
         <tr>
           <td>SERVER_PORT</td>
-          <td class="code"><pre>&#x27;8000&#x27;</pre></td>
+          <td class="code"><pre>&#x27;8080&#x27;</pre></td>
         </tr>
       
         <tr>
           <td>SERVER_PROTOCOL</td>
-          <td class="code"><pre>&#x27;HTTP/1.1&#x27;</pre></td>
+          <td class="code"><pre>&#x27;HTTP/1.0&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -2945,63 +2677,8 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
         </tr>
       
         <tr>
-          <td>SHELL</td>
-          <td class="code"><pre>&#x27;/bin/zsh&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>SSH_AUTH_SOCK</td>
-          <td class="code"><pre>&#x27;/private/tmp/com.apple.launchd.fqire89evC/Listeners&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>TMPDIR</td>
-          <td class="code"><pre>&#x27;/var/folders/xv/ydv28swd0m138cs4yysr3t2c0000gn/T/&#x27;</pre></td>
-        </tr>
-      
-        <tr>
           <td>TZ</td>
           <td class="code"><pre>&#x27;UTC&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>USER</td>
-          <td class="code"><pre>&#x27;maksimpanasenko&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>VIRTUAL_ENV</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb/venv&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>XPC_FLAGS</td>
-          <td class="code"><pre>&#x27;0x0&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>XPC_SERVICE_NAME</td>
-          <td class="code"><pre>&#x27;application.com.jetbrains.pycharm.32961047.32961897&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>_CE_CONDA</td>
-          <td class="code"><pre>&#x27;&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>_CE_M</td>
-          <td class="code"><pre>&#x27;&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>__CFBundleIdentifier</td>
-          <td class="code"><pre>&#x27;com.jetbrains.pycharm&#x27;</pre></td>
-        </tr>
-      
-        <tr>
-          <td>__CF_USER_TEXT_ENCODING</td>
-          <td class="code"><pre>&#x27;0x1F5:0x7:0x31&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -3016,7 +2693,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>wsgi.input</td>
-          <td class="code"><pre>&lt;django.core.handlers.wsgi.LimitedStream object at 0x7ff04ba1a310&gt;</pre></td>
+          <td class="code"><pre>&lt;django.core.handlers.wsgi.LimitedStream object at 0x7fa001cb6d40&gt;</pre></td>
         </tr>
       
         <tr>
@@ -3071,7 +2748,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>ALLOWED_HOSTS</td>
-          <td class="code"><pre>[]</pre></td>
+          <td class="code"><pre>[&#x27;localhost&#x27;, &#x27;localhost:8080&#x27;, &#x27;https://xn--90aa5bhn.xn--p1ai&#x27;]</pre></td>
         </tr>
       
         <tr>
@@ -3096,7 +2773,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>BASE_DIR</td>
-          <td class="code"><pre>PosixPath(&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb&#x27;)</pre></td>
+          <td class="code"><pre>PosixPath(&#x27;/code&#x27;)</pre></td>
         </tr>
       
         <tr>
@@ -3222,7 +2899,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>CSRF_TRUSTED_ORIGINS</td>
-          <td class="code"><pre>[]</pre></td>
+          <td class="code"><pre>[&#x27;https://xn--90aa5bhn.xn--p1ai&#x27;]</pre></td>
         </tr>
       
         <tr>
@@ -3237,7 +2914,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
              &#x27;CONN_HEALTH_CHECKS&#x27;: False,
              &#x27;CONN_MAX_AGE&#x27;: 0,
              &#x27;ENGINE&#x27;: &#x27;django.db.backends.postgresql&#x27;,
-             &#x27;HOST&#x27;: &#x27;127.0.0.1&#x27;,
+             &#x27;HOST&#x27;: &#x27;postgres&#x27;,
              &#x27;NAME&#x27;: &#x27;bowl_spb&#x27;,
              &#x27;OPTIONS&#x27;: {},
              &#x27;PASSWORD&#x27;: &#x27;********************&#x27;,
@@ -3690,7 +3367,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>MEDIA_ROOT</td>
-          <td class="code"><pre>&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb/media&#x27;</pre></td>
+          <td class="code"><pre>&#x27;/code/media&#x27;</pre></td>
         </tr>
       
         <tr>
@@ -3917,7 +3594,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
       
         <tr>
           <td>STATICFILES_DIRS</td>
-          <td class="code"><pre>[&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb/static&#x27;]</pre></td>
+          <td class="code"><pre>[&#x27;/code/static&#x27;]</pre></td>
         </tr>
       
         <tr>
@@ -3951,7 +3628,7 @@ LINE 1: INSERT INTO &quot;main_spbcup&quot; (&quot;year_id&quot;, &quot;player_i
           <td>TEMPLATES</td>
           <td class="code"><pre>[{&#x27;APP_DIRS&#x27;: True,
   &#x27;BACKEND&#x27;: &#x27;django.template.backends.django.DjangoTemplates&#x27;,
-  &#x27;DIRS&#x27;: [PosixPath(&#x27;/Users/maksimpanasenko/Documents/python/bowl_fbspb/templates&#x27;)],
+  &#x27;DIRS&#x27;: [PosixPath(&#x27;/code/templates&#x27;)],
   &#x27;OPTIONS&#x27;: {&#x27;context_processors&#x27;: [&#x27;django.template.context_processors.debug&#x27;,
                                      &#x27;django.template.context_processors.request&#x27;,
                                      &#x27;django.contrib.auth.context_processors.auth&#x27;,

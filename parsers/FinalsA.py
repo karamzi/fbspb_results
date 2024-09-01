@@ -1,13 +1,19 @@
+from typing import List
+
+from openpyxl.worksheet.worksheet import Worksheet
+
 from models import Player, BaseResultParse
 
 
-class FinalsAB(BaseResultParse):
-    type = 'finals_a_b'
+class FinalsA(BaseResultParse):
+    type = 'finals_a'
 
-    def parse_sheet(self, ws, target) -> [Player]:
+    def parse_sheet(self, ws: Worksheet, target: List[Player]):
         self.pointer = ['A', 1]
+
         while not isinstance(ws[self.get_cell_address()].value, int):
             self.change_row()
+
         while ws[self.get_cell_address()].value is not None:
             count = 0
             self.change_column()
@@ -26,6 +32,7 @@ class FinalsAB(BaseResultParse):
             self.change_column(by=2)
             player.place = ws[self.get_cell_address()].value
             self.next_line()
+
             while not isinstance(ws[self.get_cell_address()].value, int) and count != 5:
                 self.change_row()
                 count += 1
@@ -33,5 +40,6 @@ class FinalsAB(BaseResultParse):
     def parse(self):
         ws = self.wb[self.wb.sheetnames[0]]
         self.parse_sheet(ws, self.man)
+
         ws = self.wb[self.wb.sheetnames[1]]
         self.parse_sheet(ws, self.woman)

@@ -1,6 +1,7 @@
 from openpyxl import load_workbook
 import json
 import requests
+from typing import Optional
 
 
 class Player:
@@ -39,6 +40,7 @@ class Player:
 
     def count_statistic(self):
         self.games = list(filter(lambda x: x > 0, self.games))
+
         if len(self.games) > 0:
             self.min = min(self.games)
             self.max = max(self.games)
@@ -89,7 +91,7 @@ class BaseResultParse:
     def get_cell_address(self):
         return f'{self.pointer[0]}{self.pointer[1]}'
 
-    def find_player(self, target: [Player], name: str):
+    def find_player(self, target: [Player], name: str) -> Optional[Player]:
         for item in target:
             if item.name == name:
                 return item

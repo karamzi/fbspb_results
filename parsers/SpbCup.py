@@ -39,7 +39,7 @@ class SpbCup(BaseResultParse):
             player.games.append(ws[self.get_cell_address()].value)
             self.next_line(column=column)
             last_row = self.pointer[1]
-            while not isinstance(ws[self.get_cell_address()].value, int) and count != 15:
+            while not isinstance(ws[self.get_cell_address()].value, int) and count != 20:
                 self.change_row()
                 count += 1
         self.pointer = [column, last_row]

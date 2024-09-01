@@ -3,10 +3,12 @@ from parsers.SecondPm import SecondPmParser
 from parsers.Pairs import Pairs
 from parsers.PairsMix import PairsMix
 from parsers.Triples import Triples
-from parsers.FinalsAB import FinalsAB
+from parsers.FinalsA import FinalsA
+from parsers.FinalsB import FinalsB
 from parsers.SpbCup import SpbCup
 from parsers.TriplesMix import TriplesMix
 from parsers.Fives import Fives
+from parsers.SpbChampionship import SpbChampionship
 
 DEBUG = False
 
@@ -17,22 +19,26 @@ TOURNAMENTS = {
     'PairsMix': PairsMix,
     'Triples': Triples,
     'TriplesMix': TriplesMix,
-    'finals_a_b': FinalsAB,
+    'finals_a': FinalsA,
+    'finals_b': FinalsB,
     'spb_cup': SpbCup,
-    'Fives': Fives
+    'Fives': Fives,
+    'SpbChampionship': SpbChampionship
 }
 
 
 def choose_type():
     print('1 - 1 регламент ПМ (6 игр)')
     print('2 - 2 регламент ПМ (12 игр)')
-    print('3 - Финалы А и Б')
+    print('3 - Финалы А')
     print('4 - Пары')
     print('5 - Пары микс')
     print('6 - Тройки')
     print('7 - Кубок СПБ')
     print('8 - Тройки микс')
     print('9 - Пятерки')
+    print('10 - Чемпионат СПБ')
+    print('11 - Финалы Б')
 
     option = int(input('Выберите тип турнира: '))
 
@@ -41,7 +47,7 @@ def choose_type():
     elif option == 2:
         return 'SecondPm'
     elif option == 3:
-        return 'finals_a_b'
+        return 'finals_a'
     elif option == 4:
         return 'Pairs'
     elif option == 5:
@@ -54,6 +60,11 @@ def choose_type():
         return 'TriplesMix'
     elif option == 9:
         return 'Fives'
+    elif option == 10:
+        return 'SpbChampionship'
+    elif option == 11:
+        return 'finals_b'
+
     raise Exception('Неверный тип')
 
 

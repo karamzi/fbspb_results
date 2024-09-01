@@ -17,7 +17,7 @@ class FirstPmParser(BaseResultParse):
             player.rang = ws[self.get_cell_address()].value
             self.change_column()
             player.name = ws[self.get_cell_address()].value
-            self.change_column(by=6)
+            self.change_column(by=5)
             for _ in range(6):
                 game = ws[self.get_cell_address()].value
                 player.games.append(game)

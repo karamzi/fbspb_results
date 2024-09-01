@@ -26,9 +26,9 @@ class PairsMix(BaseResultParse):
             place = ws[self.get_cell_address()].value if ws[self.get_cell_address()].value else place
             player.place = place
             if count % 2 == 0:
-                self.man.append(player)
-            else:
                 self.woman.append(player)
+            else:
+                self.man.append(player)
             self.next_line(column='B', rows=count % 2 + 1)
             count += 1
 

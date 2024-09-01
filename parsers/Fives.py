@@ -23,7 +23,7 @@ class Fives(BaseResultParse):
             self.change_column()
 
             player.name = ws[self.get_cell_address()].value
-            self.change_column(2)
+            self.change_column(1)
 
             for _ in range(6):
                 game = ws[self.get_cell_address()].value
