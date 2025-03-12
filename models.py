@@ -57,6 +57,8 @@ class Player:
 
         if self.name == 'Завертяева Елена':
             self.name = 'Завертяева Алена'
+        elif self.name == 'Цеховская Елена':
+            self.name = 'Цеховская Алена'
 
 
 class BaseResultParse:
